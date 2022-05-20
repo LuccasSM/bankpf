@@ -7,21 +7,58 @@
 
 import UIKit
 
+
+    // MARK: Inserindo Itens da Collection
+
+struct MyCustomData {
+    var title: String
+    var image: UIImage
+}
+
 class Transferencias: UIViewController {
+    private lazy var itensPerRow: CGFloat = 2
+    private lazy var sectionItens = UIEdgeInsets(top: 32, left: 16, bottom: 32, right: 16)
+    
+    private lazy var data = [
+        MyCustomData(title: "Pix", image: Image.pix),
+        MyCustomData(title: "Saldo", image: Image.saldo),
+        MyCustomData(title: "Receber", image: Image.receber),
+        MyCustomData(title: "DOC", image: Image.doc),
+        MyCustomData(title: "TED", image: Image.ted),
+        MyCustomData(title: "TEF", image: Image.tef),
+        MyCustomData(title: "Poupança", image: Image.poupanca),
+        MyCustomData(title: "Pagar: QrCode / \nCódigo de barras", image: Image.qrCode),
+        MyCustomData(title: "Cheque especial", image: Image.cheque),
+        MyCustomData(title: "Comprovantes", image: Image.comprovantes),
+        MyCustomData(title: "Movimentações \nda bolsa", image: Image.bolsa),
+        MyCustomData(title: "Transferir para \noutras instituições", image: Image.outras),
+    ]
+    
+    private lazy var collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.translatesAutoresizingMaskIntoConstraints = false
+        cv.register(MyCustomCell.self, forCellWithReuseIdentifier: "cell")
+        cv.backgroundColor = .grayTransferencias
+        return cv
+    }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .grayDefault
         title = "Transferências"
+        setupView()
         
     // MARK: Cores do navigatorBar
         
-        if let navigationBar = navigationController?.navigationBar {
-            let appearance = UINavigationBarAppearance()
-            appearance.backgroundColor = .colorDefault
-            appearance.titleTextAttributes = [.foregroundColor: UIColor.grayDefault]
-            navigationBar.scrollEdgeAppearance = appearance
-        }
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.configureWithOpaqueBackground()
+        navigationBarAppearance.titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor : UIColor.grayDefault
+        ]
+        navigationBarAppearance.backgroundColor = UIColor.colorDefault
+        UINavigationBar.appearance().standardAppearance = navigationBarAppearance
+        UINavigationBar.appearance().compactAppearance = navigationBarAppearance
+        UINavigationBar.appearance().scrollEdgeAppearance = navigationBarAppearance
         
     // MARK: Botoes do navigatorBar
         
@@ -29,19 +66,12 @@ class Transferencias: UIViewController {
         self.navigationItem.leftBarButtonItem = barButtonRight
         buttonRight.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
         
-        self.view.addSubview(views)
-        
         NSLayoutConstraint.activate([
             buttonLeft.widthAnchor.constraint(equalToConstant: 135),
             buttonLeft.heightAnchor.constraint(equalToConstant: 50),
-            
+
             buttonRight.widthAnchor.constraint(equalToConstant: 17),
             buttonRight.heightAnchor.constraint(equalToConstant: 17),
-            
-            views.widthAnchor.constraint(equalToConstant: 100),
-            views.heightAnchor.constraint(equalToConstant: 100),
-            views.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            views.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
         ])
     }
     
@@ -61,19 +91,50 @@ class Transferencias: UIViewController {
         return button
     }()
     
-    private lazy var views: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .white
-        view.layer.cornerRadius = 5
-        view.layer.borderWidth = 1
-        view.layer.borderColor = CGColor(red: 55/255, green: 73/255, blue: 154/255, alpha: 1.0)
-        return view
-    }()
+    func setupView() {
+        view.addSubview(collectionView)
+        setupConstraint()
+        collectionView.delegate = self
+        collectionView.dataSource = self
+    }
+    
+    func setupConstraint() {
+        collectionView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
+        collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        collectionView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+    }
     
     // MARK: Navegacoes da tela
-    
+
     @objc func returnButton() {
         self.dismiss(animated: true, completion: nil)
+    }
+}
+
+extension Transferencias: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! MyCustomCell
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 6
+        cell.data = data[indexPath.row]
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = (view.frame.width - (3 * 16)) / 2
+        return CGSize(width: width, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return sectionItens
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
 }
