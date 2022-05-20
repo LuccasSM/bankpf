@@ -33,6 +33,7 @@ class SobreNos: UIViewController {
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(scrollViewContainer)
         self.scrollViewContainer.addArrangedSubview(text)
+        self.scrollViewContainer.addArrangedSubview(versionApp)
         
         NSLayoutConstraint.activate([
             header.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
@@ -58,6 +59,8 @@ class SobreNos: UIViewController {
             scrollViewContainer.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor),
             scrollViewContainer.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, constant: -2 * 30),
             scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            
+            versionApp.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor, constant: -10),
         ])
     }
     
@@ -109,6 +112,14 @@ class SobreNos: UIViewController {
         let text = TermsPolicy().text()
         text.translatesAutoresizingMaskIntoConstraints = false
         return text
+    }()
+    
+    private lazy var versionApp: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "Versão do App: 4.6.46"
+        lbl.font = .systemFont(ofSize: 12, weight: .light)
+        return lbl
     }()
     
     // MARK: Navegacoes da tela
