@@ -11,6 +11,7 @@
 		F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */; };
 		F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */; };
 		F82D368D2833C53C009405C7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D368C2833C53C009405C7 /* Buttons.swift */; };
+		F83DB307283C375200708F3D /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB306283C375200708F3D /* TextField.swift */; };
 		F83E88332833079D00163411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88322833079D00163411 /* AppDelegate.swift */; };
 		F83E88352833079D00163411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88342833079D00163411 /* SceneDelegate.swift */; };
 		F83E88372833079D00163411 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88362833079D00163411 /* Splash.swift */; };
@@ -31,6 +32,7 @@
 		F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBankpf.swift; sourceTree = "<group>"; };
 		F82D368C2833C53C009405C7 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
+		F83DB306283C375200708F3D /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		F83E882F2833079D00163411 /* Bankpf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankpf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83E88322833079D00163411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F83E88342833079D00163411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F83DB304283C32F000708F3D /* Cadastrar */ = {
+			isa = PBXGroup;
+			children = (
+				F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */,
+			);
+			path = Cadastrar;
+			sourceTree = "<group>";
+		};
+		F83DB305283C331400708F3D /* Entrar */ = {
+			isa = PBXGroup;
+			children = (
+				F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */,
+			);
+			path = Entrar;
+			sourceTree = "<group>";
+		};
 		F83E88262833079D00163411 = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +120,7 @@
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
 				F83E88402833079F00163411 /* Info.plist */,
+				F83DB306283C375200708F3D /* TextField.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -135,12 +154,12 @@
 		F8A49518283308AB007F0CFE /* Pré-Login */ = {
 			isa = PBXGroup;
 			children = (
+				F83DB305283C331400708F3D /* Entrar */,
 				F8AEDE4F2837D15F006D5AF4 /* Agencias */,
+				F83DB304283C32F000708F3D /* Cadastrar */,
 				F8A49519283308BD007F0CFE /* PreLogin.swift */,
 				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
 				F8AEDE4D2837D10D006D5AF4 /* Transferencias */,
-				F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */,
-				F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */,
 			);
 			name = "Pré-Login";
 			path = "Pré-Login";
@@ -248,6 +267,7 @@
 				F82D368D2833C53C009405C7 /* Buttons.swift in Sources */,
 				F83E88372833079D00163411 /* Splash.swift in Sources */,
 				F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */,
+				F83DB307283C375200708F3D /* TextField.swift in Sources */,
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
 				F85A94E82837D4E500DD3783 /* Images.swift in Sources */,
 				F8F6FDBC28333066001B4338 /* SobreNos.swift in Sources */,
