@@ -37,8 +37,6 @@ class EsqueciSenha: UIViewController {
         
     // MARK: - Inserindo itens ao ScrollView
         
-        self.view.addSubview(header)
-        self.header.addSubview(close)
         self.view.addSubview(textVazio)
         self.view.addSubview(tfEmail)
         self.view.addSubview(buttonEnviar)
@@ -47,23 +45,14 @@ class EsqueciSenha: UIViewController {
             buttonLeft.widthAnchor.constraint(equalToConstant: 20),
             buttonLeft.heightAnchor.constraint(equalToConstant: 20),
             
-            header.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            header.topAnchor.constraint(equalTo: self.view.topAnchor),
-            header.heightAnchor.constraint(equalToConstant: 80),
-            
-            close.widthAnchor.constraint(equalToConstant: 17),
-            close.heightAnchor.constraint(equalToConstant: 17),
-            close.leadingAnchor.constraint(equalTo: self.header.leadingAnchor, constant: 20),
-            close.centerYAnchor.constraint(equalTo: self.header.centerYAnchor),
-            
             textVazio.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 35),
             textVazio.bottomAnchor.constraint(equalTo: self.tfEmail.topAnchor, constant: -10),
-            
+
             tfEmail.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60),
             tfEmail.heightAnchor.constraint(equalToConstant: 60),
             tfEmail.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             tfEmail.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -100),
-            
+
             buttonEnviar.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60),
             buttonEnviar.heightAnchor.constraint(equalToConstant: 60),
             buttonEnviar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
@@ -73,21 +62,13 @@ class EsqueciSenha: UIViewController {
     
     // MARK: Views da tela
     
-    private lazy var header: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .colorDefault
-        view.layer.zPosition = 2
-        return view
-    }()
-    
     private lazy var buttonLeft: UIButton = {
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
         button.adjustsImageWhenHighlighted = false
         button.setImage(UIImage(named: "left"), for: UIControl.State.normal)
         return button
     }()
-    
+
     private lazy var close: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -96,7 +77,7 @@ class EsqueciSenha: UIViewController {
         button.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
         return button
     }()
-    
+
     private lazy var textVazio: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
@@ -106,13 +87,13 @@ class EsqueciSenha: UIViewController {
         text.isHidden = true
         return text
     }()
-    
+
     private lazy var tfEmail: UITextField = {
         let tf = TextField().tf()
         tf.attributedPlaceholder = NSAttributedString(string: "Digite seu E-mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         return tf
     }()
-    
+
     private lazy var buttonEnviar: UIButton = {
         let button = Buttons().button()
         button.backgroundColor = .colorDefault

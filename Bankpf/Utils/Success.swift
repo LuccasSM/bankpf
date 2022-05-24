@@ -60,7 +60,7 @@ class Success: UIViewController {
     private lazy var titleView: UILabel = {
         let text = UILabel(frame: .zero)
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "E-mail enviado com sucesso"
+        text.text = "Sucesso! E-mail enviado"
         text.font = UIFont.boldSystemFont(ofSize: 22)
         text.textColor = .black
         text.textAlignment = .center
