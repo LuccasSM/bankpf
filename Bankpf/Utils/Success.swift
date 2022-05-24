@@ -71,7 +71,7 @@ class Success: UIViewController {
     private lazy var textView: UILabel = {
         let text = UILabel(frame: .zero)
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Por favor, solicitamos que assim que \npossível, verifique seu e-mail \ne altere sua senha"
+        text.text = "Por favor, solicitamos que \nassim que possível, verifique \nseu e-mail e altere sua senha"
         text.font = UIFont.systemFont(ofSize: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
