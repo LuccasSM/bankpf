@@ -12,7 +12,6 @@ class SobreNos: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .grayDefault
-        title = "Sobre nós"
         
     // MARK: Cores do navigatorBar
         

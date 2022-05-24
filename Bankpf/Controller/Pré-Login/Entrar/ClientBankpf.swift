@@ -118,7 +118,7 @@ class ClientBankpf: UIViewController {
     
     private lazy var esqueciSenha: UILabel = {
         let lbl = UILabel()
-        let tapAction = UITapGestureRecognizer(target: self, action: #selector(returnButton))
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(senhaEsqueci))
         
         lbl.translatesAutoresizingMaskIntoConstraints = false
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
@@ -145,6 +145,18 @@ class ClientBankpf: UIViewController {
         transition.duration = 0.4
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
+        view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    @objc func senhaEsqueci() {
+        let controller = EsqueciSenha()
+        let navVC = UINavigationController(rootViewController: controller)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: false, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromTop
         view.window!.layer.add(transition, forKey: kCATransition)
     }
     

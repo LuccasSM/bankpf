@@ -12,6 +12,9 @@
 		F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */; };
 		F82D368D2833C53C009405C7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D368C2833C53C009405C7 /* Buttons.swift */; };
 		F83DB307283C375200708F3D /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB306283C375200708F3D /* TextField.swift */; };
+		F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB308283C54DD00708F3D /* EsqueciSenha.swift */; };
+		F83DB30B283C5CCD00708F3D /* Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30A283C5CCD00708F3D /* Success.swift */; };
+		F83DB30D283C5CEC00708F3D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30C283C5CEC00708F3D /* Error.swift */; };
 		F83E88332833079D00163411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88322833079D00163411 /* AppDelegate.swift */; };
 		F83E88352833079D00163411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88342833079D00163411 /* SceneDelegate.swift */; };
 		F83E88372833079D00163411 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88362833079D00163411 /* Splash.swift */; };
@@ -33,6 +36,9 @@
 		F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBankpf.swift; sourceTree = "<group>"; };
 		F82D368C2833C53C009405C7 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		F83DB306283C375200708F3D /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F83DB308283C54DD00708F3D /* EsqueciSenha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsqueciSenha.swift; sourceTree = "<group>"; };
+		F83DB30A283C5CCD00708F3D /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
+		F83DB30C283C5CEC00708F3D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 		F83E882F2833079D00163411 /* Bankpf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankpf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83E88322833079D00163411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F83E88342833079D00163411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +79,7 @@
 			isa = PBXGroup;
 			children = (
 				F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */,
+				F83DB308283C54DD00708F3D /* EsqueciSenha.swift */,
 			);
 			path = Entrar;
 			sourceTree = "<group>";
@@ -119,7 +126,9 @@
 				F83E883B2833079F00163411 /* Assets.xcassets */,
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
+				F83DB30C283C5CEC00708F3D /* Error.swift */,
 				F83E88402833079F00163411 /* Info.plist */,
+				F83DB30A283C5CCD00708F3D /* Success.swift */,
 				F83DB306283C375200708F3D /* TextField.swift */,
 			);
 			path = Utils;
@@ -273,11 +282,14 @@
 				F8F6FDBC28333066001B4338 /* SobreNos.swift in Sources */,
 				F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */,
 				F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */,
+				F83DB30B283C5CCD00708F3D /* Success.swift in Sources */,
 				F8F6FDBE28333089001B4338 /* Agencias.swift in Sources */,
 				F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */,
+				F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */,
 				F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */,
 				F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */,
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
+				F83DB30D283C5CEC00708F3D /* Error.swift in Sources */,
 				F83E88352833079D00163411 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

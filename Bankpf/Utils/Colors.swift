@@ -15,4 +15,5 @@ extension UIColor {
     static let colorDefault = UIColor.rgb(red: 55, green: 73, blue: 154)
     static let grayDefault = UIColor.rgb(red: 245, green: 245, blue: 245)
     static let grayTransferencias = UIColor.rgb(red: 233, green: 233, blue: 233)
+    static let redDefault = UIColor.rgb(red: 244, green: 65, blue: 52)
 }
