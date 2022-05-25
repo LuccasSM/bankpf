@@ -75,6 +75,13 @@ class ClientBankpf: UIViewController {
     
     // MARK: Views da tela
     
+    private lazy var buttonLeft: UIButton = {
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        button.adjustsImageWhenHighlighted = false
+        button.setImage(UIImage(named: "close-white"), for: UIControl.State.normal)
+        return button
+    }()
+    
     private lazy var titleLabel: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
@@ -84,16 +91,9 @@ class ClientBankpf: UIViewController {
         return lbl
     }()
     
-    private lazy var buttonLeft: UIButton = {
-        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
-        button.adjustsImageWhenHighlighted = false
-        button.setImage(UIImage(named: "close-white"), for: UIControl.State.normal)
-        return button
-    }()
-    
     private lazy var tfEmail: UITextField = {
         let tf = TextField().tf()
-        tf.attributedPlaceholder = NSAttributedString(string: "Digite seu E-mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
+        tf.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         return tf
     }()
     
@@ -149,16 +149,6 @@ class ClientBankpf: UIViewController {
     }
     
     @objc func senhaEsqueci() {
-//        let controller = EsqueciSenha()
-//        let navVC = UINavigationController(rootViewController: controller)
-//        navVC.modalPresentationStyle = .fullScreen
-//        present(navVC, animated: false, completion: nil)
-//        let transition = CATransition()
-//        transition.duration = 0.4
-//        transition.type = CATransitionType.push
-//        transition.subtype = CATransitionSubtype.fromTop
-//        view.window!.layer.add(transition, forKey: kCATransition)
-        
         let controller = EsqueciSenha()
         let navVC = UINavigationController(rootViewController: controller)
         navVC.modalPresentationStyle = .fullScreen
