@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClientBankpf: UIViewController {
+class ClientBankpf: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +43,7 @@ class ClientBankpf: UIViewController {
         self.view.addSubview(titleLabel)
         self.view.addSubview(tfEmail)
         self.view.addSubview(tfSenha)
+        self.tfSenha.addSubview(olhoImageSenha)
         self.view.addSubview(buttonEntrar)
         self.view.addSubview(esqueciSenha)
         
@@ -63,6 +64,9 @@ class ClientBankpf: UIViewController {
             tfSenha.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             tfSenha.topAnchor.constraint(equalTo: self.tfEmail.bottomAnchor, constant: 30),
             
+            olhoImageSenha.widthAnchor.constraint(equalToConstant: 60),
+            olhoImageSenha.heightAnchor.constraint(equalToConstant: 60),
+            
             esqueciSenha.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             esqueciSenha.topAnchor.constraint(equalTo: self.tfSenha.bottomAnchor, constant: 30),
             
@@ -71,6 +75,15 @@ class ClientBankpf: UIViewController {
             buttonEntrar.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             buttonEntrar.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -16),
         ])
+    }
+    
+    // MARK: Travando o limite de caracteres para o UITextField
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 6
+        let currentString: NSString = tfSenha.text! as NSString
+        let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
     
     // MARK: Views da tela
@@ -99,9 +112,22 @@ class ClientBankpf: UIViewController {
     
     private lazy var tfSenha: UITextField = {
         let tf = TextField().tf()
+        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
+        tf.isSecureTextEntry = true
+        tf.rightView = olhoImageSenha
+        tf.rightViewMode = .always
         return tf
+    }()
+    
+    private lazy var olhoImageSenha: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "olho-aberto"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 28, bottom: 18, right: 10)
+        button.addTarget(self, action: #selector(mostrarOcultarSenha), for: .touchUpInside)
+        return button
     }()
     
     private lazy var buttonEntrar: UIButton = {
@@ -158,6 +184,18 @@ class ClientBankpf: UIViewController {
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromRight
         view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    // MARK: Lógicas
+    
+    @objc func mostrarOcultarSenha() {
+        if tfSenha.isSecureTextEntry == false {
+            olhoImageSenha.setImage(UIImage(named: "olho-aberto"), for: .normal)
+            tfSenha.isSecureTextEntry = true
+        } else {
+            olhoImageSenha.setImage(UIImage(named: "olho-fechado"), for: .normal)
+            tfSenha.isSecureTextEntry = false
+        }
     }
     
     @objc func hideKeyboard() {

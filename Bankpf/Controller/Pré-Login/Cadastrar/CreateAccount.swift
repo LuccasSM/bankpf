@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAccount: UIViewController {
+class CreateAccount: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +17,10 @@ class CreateAccount: UIViewController {
         image.widthAnchor.constraint(equalToConstant: 135).isActive = true
         image.heightAnchor.constraint(equalToConstant: 150).isActive = true
         self.navigationItem.titleView = image
+        
+    // MARK: Removendo Keyboard
+            
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
     // MARK: Cores do navigatorBar
             
@@ -43,8 +47,9 @@ class CreateAccount: UIViewController {
         self.scrollViewContainer.addArrangedSubview(tfCPF)
         self.scrollViewContainer.addArrangedSubview(tfData)
         self.scrollViewContainer.addArrangedSubview(tfSenha)
+        self.tfSenha.addSubview(olhoImageSenha)
         self.scrollViewContainer.addArrangedSubview(tfConfirmarSenha)
-        self.scrollViewContainer.addArrangedSubview(tfConfirmarSenha)
+        self.tfConfirmarSenha.addSubview(olhoImageConfirmarSenha)
         self.view.addSubview(porqueDados)
         
         NSLayoutConstraint.activate([
@@ -75,13 +80,28 @@ class CreateAccount: UIViewController {
             
             tfSenha.heightAnchor.constraint(equalToConstant: 60),
             
+            olhoImageSenha.widthAnchor.constraint(equalToConstant: 60),
+            olhoImageSenha.heightAnchor.constraint(equalToConstant: 60),
+            
             tfConfirmarSenha.heightAnchor.constraint(equalToConstant: 60),
+            
+            olhoImageConfirmarSenha.widthAnchor.constraint(equalToConstant: 60),
+            olhoImageConfirmarSenha.heightAnchor.constraint(equalToConstant: 60),
             
             porqueDados.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             porqueDados.heightAnchor.constraint(equalToConstant: 50),
             porqueDados.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
             porqueDados.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
+    }
+    
+    // MARK: Travando o limite de caracteres para o UITextField
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 6
+        let currentString: NSString = tfSenha.text! as NSString
+        let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
     
     // MARK: Views da tela
@@ -148,16 +168,42 @@ class CreateAccount: UIViewController {
 
     private lazy var tfSenha: UITextField = {
         let tf = TextField().tf()
+        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
+        tf.isSecureTextEntry = true
+        tf.rightView = olhoImageSenha
+        tf.rightViewMode = .always
         return tf
+    }()
+    
+    private lazy var olhoImageSenha: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "olho-aberto"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 28, bottom: 18, right: 10)
+        button.addTarget(self, action: #selector(mostrarOcultarSenha), for: .touchUpInside)
+        return button
     }()
 
     private lazy var tfConfirmarSenha: UITextField = {
         let tf = TextField().tf()
+//        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Confirmar senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
+        tf.isSecureTextEntry = true
+        tf.rightView = olhoImageConfirmarSenha
+        tf.rightViewMode = .always
         return tf
+    }()
+    
+    private lazy var olhoImageConfirmarSenha: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "olho-aberto"), for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 28, bottom: 18, right: 10)
+        button.addTarget(self, action: #selector(mostrarOcultarConfirmarSenha), for: .touchUpInside)
+        return button
     }()
 
     private lazy var porqueDados: UILabel = {
@@ -192,5 +238,31 @@ class CreateAccount: UIViewController {
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromLeft
         view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    // MARK: Lógicas
+    
+    @objc func mostrarOcultarSenha() {
+        if tfSenha.isSecureTextEntry == false {
+            olhoImageSenha.setImage(UIImage(named: "olho-aberto"), for: .normal)
+            tfSenha.isSecureTextEntry = true
+        } else {
+            olhoImageSenha.setImage(UIImage(named: "olho-fechado"), for: .normal)
+            tfSenha.isSecureTextEntry = false
+        }
+    }
+    
+    @objc func mostrarOcultarConfirmarSenha() {
+        if tfConfirmarSenha.isSecureTextEntry == false {
+            olhoImageConfirmarSenha.setImage(UIImage(named: "olho-aberto"), for: .normal)
+            tfConfirmarSenha.isSecureTextEntry = true
+        } else {
+            olhoImageConfirmarSenha.setImage(UIImage(named: "olho-fechado"), for: .normal)
+            tfConfirmarSenha.isSecureTextEntry = false
+        }
+    }
+    
+    @objc func hideKeyboard() {
+        self.view.endEditing(true)
     }
 }

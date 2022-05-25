@@ -112,6 +112,8 @@ class EsqueciSenha: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    // MARK: Lógicas
+    
     @objc func enviarEmail() {
         if self.tfEmail.validateEmail() {
             self.present(Success(), animated: true)
