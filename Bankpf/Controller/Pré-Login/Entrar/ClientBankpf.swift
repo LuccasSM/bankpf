@@ -170,7 +170,7 @@ class ClientBankpf: UIViewController {
         let transition = CATransition()
         transition.duration = 0.4
         transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromRight
+        transition.subtype = CATransitionSubtype.fromTop
         view.window!.layer.add(transition, forKey: kCATransition)
     }
     

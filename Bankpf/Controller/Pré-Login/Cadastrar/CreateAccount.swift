@@ -148,7 +148,7 @@ class CreateAccount: UIViewController {
     
     private lazy var tfEmail: UITextField = {
         let tf = TextField().tf()
-        tf.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
+        tf.attributedPlaceholder = NSAttributedString(string: "E-mail", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         return tf
     }()
 
@@ -350,5 +350,4 @@ extension CreateAccount: UITextFieldDelegate {
         
         return newString.count <= maxLength
     }
-    
 }
