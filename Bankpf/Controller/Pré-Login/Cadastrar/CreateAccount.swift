@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CreateAccount: UIViewController, UITextFieldDelegate {
+class CreateAccount: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +44,15 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
         self.scrollView.addSubview(scrollViewContainer)
         self.view.addSubview(titleLabel)
         self.scrollViewContainer.addArrangedSubview(tfNome)
+        self.scrollViewContainer.addArrangedSubview(tfEmail)
         self.scrollViewContainer.addArrangedSubview(tfCPF)
         self.scrollViewContainer.addArrangedSubview(tfData)
         self.scrollViewContainer.addArrangedSubview(tfSenha)
         self.tfSenha.addSubview(olhoImageSenha)
         self.scrollViewContainer.addArrangedSubview(tfConfirmarSenha)
         self.tfConfirmarSenha.addSubview(olhoImageConfirmarSenha)
-        self.view.addSubview(porqueDados)
+        self.scrollViewContainer.addArrangedSubview(buttonAvancar)
+        self.scrollViewContainer.addArrangedSubview(porqueDados)
         
         NSLayoutConstraint.activate([
             buttonLeft.widthAnchor.constraint(equalToConstant: 17),
@@ -62,17 +64,19 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
             titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-            scrollView.topAnchor.constraint(equalTo: self.titleLabel.safeAreaLayoutGuide.bottomAnchor, constant: 40),
+            scrollView.topAnchor.constraint(equalTo: self.titleLabel.safeAreaLayoutGuide.bottomAnchor, constant: 30),
             scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
             scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
             
             scrollViewContainer.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, constant: -2 * 30),
             scrollViewContainer.topAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.topAnchor),
-            scrollViewContainer.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor, constant: -60),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor),
             scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             
             tfNome.heightAnchor.constraint(equalToConstant: 60),
+            
+            tfEmail.heightAnchor.constraint(equalToConstant: 60),
             
             tfCPF.heightAnchor.constraint(equalToConstant: 60),
             
@@ -88,20 +92,10 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
             olhoImageConfirmarSenha.widthAnchor.constraint(equalToConstant: 60),
             olhoImageConfirmarSenha.heightAnchor.constraint(equalToConstant: 60),
             
-            porqueDados.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            porqueDados.heightAnchor.constraint(equalToConstant: 50),
-            porqueDados.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -8),
-            porqueDados.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            buttonAvancar.heightAnchor.constraint(equalToConstant: 60),
+            
+            porqueDados.heightAnchor.constraint(equalToConstant: 60),
         ])
-    }
-    
-    // MARK: Travando o limite de caracteres para o UITextField
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 6
-        let currentString: NSString = tfSenha.text! as NSString
-        let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
-        return newString.length <= maxLength
     }
     
     // MARK: Views da tela
@@ -151,9 +145,16 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
         tf.attributedPlaceholder = NSAttributedString(string: "Nome completo", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         return tf
     }()
+    
+    private lazy var tfEmail: UITextField = {
+        let tf = TextField().tf()
+        tf.attributedPlaceholder = NSAttributedString(string: "Email", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
+        return tf
+    }()
 
     private lazy var tfCPF: UITextField = {
         let tf = TextField().tf()
+        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "CPF", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
         return tf
@@ -161,19 +162,17 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
 
     private lazy var tfData: UITextField = {
         let tf = TextField().tf()
+        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Data de nascimento", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
         return tf
     }()
 
     private lazy var tfSenha: UITextField = {
-        let tf = TextField().tf()
+        let tf = TextFieldSenhas().tf()
         tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
-        tf.keyboardType = .asciiCapableNumberPad
-        tf.isSecureTextEntry = true
         tf.rightView = olhoImageSenha
-        tf.rightViewMode = .always
         return tf
     }()
     
@@ -187,13 +186,10 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
     }()
 
     private lazy var tfConfirmarSenha: UITextField = {
-        let tf = TextField().tf()
-//        tf.delegate = self
+        let tf = TextFieldSenhas().tf()
+        tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Confirmar senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
-        tf.keyboardType = .asciiCapableNumberPad
-        tf.isSecureTextEntry = true
         tf.rightView = olhoImageConfirmarSenha
-        tf.rightViewMode = .always
         return tf
     }()
     
@@ -203,6 +199,18 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
         button.setImage(UIImage(named: "olho-aberto"), for: .normal)
         button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 28, bottom: 18, right: 10)
         button.addTarget(self, action: #selector(mostrarOcultarConfirmarSenha), for: .touchUpInside)
+        return button
+    }()
+    
+    private lazy var buttonAvancar: UIButton = {
+        let button = Buttons().button()
+        button.backgroundColor = .colorDefault
+        button.setTitle("Avançar", for: .normal)
+        button.setTitleColor(.grayDefault, for: .normal)
+        button.layer.borderWidth = 1
+        button.layer.borderColor = CGColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
+        button.layer.cornerRadius = 10
+        button.addTarget(self, action: #selector(enviarAccount), for: .touchUpInside)
         return button
     }()
 
@@ -240,6 +248,14 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
         view.window!.layer.add(transition, forKey: kCATransition)
     }
     
+    @objc func enviarAccount() {
+        if self.tfEmail.validateEmail() {
+            print("Usuário forneceu email certo com @")
+        } else {
+            print("Usuário NAO forneceu email certo com @")
+        }
+    }
+    
     // MARK: Lógicas
     
     @objc func mostrarOcultarSenha() {
@@ -265,4 +281,74 @@ class CreateAccount: UIViewController, UITextFieldDelegate {
     @objc func hideKeyboard() {
         self.view.endEditing(true)
     }
+}
+
+    // MARK: Travando o limite de caracteres para o UITextField
+
+extension CreateAccount: UITextFieldDelegate {
+    
+    // MARK: Validando email
+    
+    func validateEmail() -> Bool {
+        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let validateRegex = NSPredicate(format: "SELF MATCHES %@", emailRegex)
+        return validateRegex.evaluate(with: self.tfEmail)
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        var appendString = ""
+        var maxLength = 6
+        
+    // MARK: Máscara do CPF
+        
+        if textField.placeholder == "CPF" {
+            if range.length == 0 {
+                switch range.location {
+                case 3:
+                    appendString = "."
+                case 7:
+                    appendString = "."
+                case 11:
+                    appendString = "-"
+                default:
+                    break
+                }
+            }
+            
+            textField.text?.append(appendString)
+            
+            if textField.placeholder == "CPF" {
+                maxLength = 14
+            }
+        };
+        
+    // MARK: Máscara da Data de nascimento
+        
+        if textField.placeholder == "Data de nascimento" {
+            if range.length == 0 {
+                switch range.location {
+                case 2:
+                    appendString = "/"
+                case 5:
+                    appendString = "/"
+                default:
+                    break
+                }
+            }
+            
+            textField.text?.append(appendString)
+            
+            if textField.placeholder == "Data de nascimento" {
+                maxLength = 10
+            }
+        };
+        
+    // MARK: Máscara da Senha
+        
+        let currentString = (textField.text ?? "") as NSString
+        let newString = currentString.replacingCharacters(in: range, with: string)
+        
+        return newString.count <= maxLength
+    }
+    
 }

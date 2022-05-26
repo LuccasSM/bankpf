@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ClientBankpf: UIViewController, UITextFieldDelegate {
+class ClientBankpf: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,15 +77,6 @@ class ClientBankpf: UIViewController, UITextFieldDelegate {
         ])
     }
     
-    // MARK: Travando o limite de caracteres para o UITextField
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        let maxLength = 6
-        let currentString: NSString = tfSenha.text! as NSString
-        let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
-        return newString.length <= maxLength
-    }
-    
     // MARK: Views da tela
     
     private lazy var buttonLeft: UIButton = {
@@ -111,13 +102,10 @@ class ClientBankpf: UIViewController, UITextFieldDelegate {
     }()
     
     private lazy var tfSenha: UITextField = {
-        let tf = TextField().tf()
+        let tf = TextFieldSenhas().tf()
         tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "Senha", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
-        tf.keyboardType = .asciiCapableNumberPad
-        tf.isSecureTextEntry = true
         tf.rightView = olhoImageSenha
-        tf.rightViewMode = .always
         return tf
     }()
     
@@ -200,5 +188,16 @@ class ClientBankpf: UIViewController, UITextFieldDelegate {
     
     @objc func hideKeyboard() {
         self.view.endEditing(true)
+    }
+}
+
+    // MARK: Travando o limite de caracteres para o UITextField
+
+extension ClientBankpf: UITextFieldDelegate {
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let maxLength = 6
+        let currentString: NSString = tfSenha.text! as NSString
+        let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+        return newString.length <= maxLength
     }
 }

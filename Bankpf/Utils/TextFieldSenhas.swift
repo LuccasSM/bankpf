@@ -1,13 +1,13 @@
 //
-//  TextField.swift
+//  TextFieldSenhas.swift
 //  Bankpf
 //
-//  Created by Luccas Santana Marinho on 23/05/22.
+//  Created by Luccas Santana Marinho on 25/05/22.
 //
 
 import UIKit
 
-class TextField: UITextField {
+class TextFieldSenhas: UITextField {
     func tf() -> UITextField {
         let tf = UITextField(frame: .zero)
         tf.translatesAutoresizingMaskIntoConstraints = false
@@ -16,8 +16,9 @@ class TextField: UITextField {
         tf.layer.cornerRadius = 10
         tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
-        tf.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
+        tf.keyboardType = .asciiCapableNumberPad
         tf.rightViewMode = .always
+        tf.isSecureTextEntry = true
         return tf
     }
 }
