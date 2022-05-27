@@ -249,7 +249,7 @@ class CreateAccount: UIViewController {
     }
     
     @objc func enviarAccount() {
-        if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() {
+        if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && tfSenha.text == tfConfirmarSenha.text {
             self.present(SuccessCreateAccount(), animated: true)
         } else {
             self.present(ErrorAccount(), animated: true)
