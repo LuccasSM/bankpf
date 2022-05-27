@@ -13,8 +13,8 @@
 		F82D368D2833C53C009405C7 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82D368C2833C53C009405C7 /* Buttons.swift */; };
 		F83DB307283C375200708F3D /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB306283C375200708F3D /* TextField.swift */; };
 		F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB308283C54DD00708F3D /* EsqueciSenha.swift */; };
-		F83DB30B283C5CCD00708F3D /* Success.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30A283C5CCD00708F3D /* Success.swift */; };
-		F83DB30D283C5CEC00708F3D /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30C283C5CEC00708F3D /* Error.swift */; };
+		F83DB30B283C5CCD00708F3D /* SuccessSenha.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30A283C5CCD00708F3D /* SuccessSenha.swift */; };
+		F83DB30D283C5CEC00708F3D /* ErrorAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83DB30C283C5CEC00708F3D /* ErrorAccount.swift */; };
 		F83E88332833079D00163411 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88322833079D00163411 /* AppDelegate.swift */; };
 		F83E88352833079D00163411 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88342833079D00163411 /* SceneDelegate.swift */; };
 		F83E88372833079D00163411 /* Splash.swift in Sources */ = {isa = PBXBuildFile; fileRef = F83E88362833079D00163411 /* Splash.swift */; };
@@ -25,6 +25,8 @@
 		F85A94E82837D4E500DD3783 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E72837D4E500DD3783 /* Images.swift */; };
 		F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */; };
 		F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A49519283308BD007F0CFE /* PreLogin.swift */; };
+		F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */; };
+		F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */; };
 		F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF12F4284042D400856212 /* PorqueDados.swift */; };
 		F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */; };
 		F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6FDB928333034001B4338 /* Transferencias.swift */; };
@@ -39,8 +41,8 @@
 		F82D368C2833C53C009405C7 /* Buttons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
 		F83DB306283C375200708F3D /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		F83DB308283C54DD00708F3D /* EsqueciSenha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EsqueciSenha.swift; sourceTree = "<group>"; };
-		F83DB30A283C5CCD00708F3D /* Success.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Success.swift; sourceTree = "<group>"; };
-		F83DB30C283C5CEC00708F3D /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
+		F83DB30A283C5CCD00708F3D /* SuccessSenha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessSenha.swift; sourceTree = "<group>"; };
+		F83DB30C283C5CEC00708F3D /* ErrorAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAccount.swift; sourceTree = "<group>"; };
 		F83E882F2833079D00163411 /* Bankpf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankpf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F83E88322833079D00163411 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F83E88342833079D00163411 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,8 @@
 		F85A94E72837D4E500DD3783 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F8A49519283308BD007F0CFE /* PreLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLogin.swift; sourceTree = "<group>"; };
+		F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesAccount.swift; sourceTree = "<group>"; };
+		F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreateAccount.swift; sourceTree = "<group>"; };
 		F8DF12F4284042D400856212 /* PorqueDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorqueDados.swift; sourceTree = "<group>"; };
 		F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSenhas.swift; sourceTree = "<group>"; };
 		F8F6FDB928333034001B4338 /* Transferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferencias.swift; sourceTree = "<group>"; };
@@ -76,6 +80,7 @@
 			children = (
 				F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */,
 				F8DF12F4284042D400856212 /* PorqueDados.swift */,
+				F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */,
 			);
 			path = Cadastrar;
 			sourceTree = "<group>";
@@ -84,9 +89,8 @@
 			isa = PBXGroup;
 			children = (
 				F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */,
-				F83DB30C283C5CEC00708F3D /* Error.swift */,
 				F83DB308283C54DD00708F3D /* EsqueciSenha.swift */,
-				F83DB30A283C5CCD00708F3D /* Success.swift */,
+				F83DB30A283C5CCD00708F3D /* SuccessSenha.swift */,
 			);
 			path = Entrar;
 			sourceTree = "<group>";
@@ -133,9 +137,11 @@
 				F83E883B2833079F00163411 /* Assets.xcassets */,
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
+				F83DB30C283C5CEC00708F3D /* ErrorAccount.swift */,
 				F83E88402833079F00163411 /* Info.plist */,
 				F83DB306283C375200708F3D /* TextField.swift */,
 				F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */,
+				F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -286,18 +292,20 @@
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
 				F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */,
 				F85A94E82837D4E500DD3783 /* Images.swift in Sources */,
+				F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */,
 				F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */,
 				F8F6FDBC28333066001B4338 /* SobreNos.swift in Sources */,
 				F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */,
 				F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */,
-				F83DB30B283C5CCD00708F3D /* Success.swift in Sources */,
+				F83DB30B283C5CCD00708F3D /* SuccessSenha.swift in Sources */,
 				F8F6FDBE28333089001B4338 /* Agencias.swift in Sources */,
 				F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */,
+				F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */,
 				F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */,
 				F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */,
 				F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */,
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
-				F83DB30D283C5CEC00708F3D /* Error.swift in Sources */,
+				F83DB30D283C5CEC00708F3D /* ErrorAccount.swift in Sources */,
 				F83E88352833079D00163411 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

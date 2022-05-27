@@ -124,7 +124,7 @@ class PreLogin: UIViewController {
     private lazy var buttonClient: UIButton = {
         let button = Buttons().button()
         button.backgroundColor = .colorDefault
-        button.setTitle("Já sou cliente Bankpf", for: .normal)
+        button.setTitle("Já sou cliente bankpf", for: .normal)
         button.setTitleColor(.grayDefault, for: .normal)
         button.layer.borderWidth = 1
         button.layer.borderColor = CGColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)

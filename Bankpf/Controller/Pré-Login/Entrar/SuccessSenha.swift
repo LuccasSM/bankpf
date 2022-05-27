@@ -1,5 +1,5 @@
 //
-//  Error.swift
+//  Success.swift
 //  Bankpf
 //
 //  Created by Luccas Santana Marinho on 23/05/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Error: UIViewController {
+class SuccessSenha: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +45,7 @@ class Error: UIViewController {
     private lazy var image: UIImageView = {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "error")
+        image.image = UIImage(named: "success")
         return image
     }()
     
@@ -60,7 +60,7 @@ class Error: UIViewController {
     private lazy var titleView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Erro!"
+        text.text = "Sucesso! E-mail enviado"
         text.font = UIFont.boldSystemFont(ofSize: 22)
         text.textColor = .black
         text.textAlignment = .center
@@ -71,7 +71,7 @@ class Error: UIViewController {
     private lazy var textView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Por favor, certifique-se que \npreencheu os dados corretamente"
+        text.text = "Por favor, solicitamos que \nassim que possível, verifique \nseu e-mail e altere sua senha"
         text.font = UIFont.systemFont(ofSize: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
@@ -91,6 +91,14 @@ class Error: UIViewController {
     // MARK: Navegacoes da tela
     
     @objc func returnButton() {
-        self.dismiss(animated: true, completion: nil)
+        let controller = ClientBankpf()
+        let navVC = UINavigationController(rootViewController: controller)
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: false, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        view.window!.layer.add(transition, forKey: kCATransition)
     }
 }

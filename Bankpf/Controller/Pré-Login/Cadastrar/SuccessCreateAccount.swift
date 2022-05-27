@@ -1,13 +1,13 @@
 //
-//  Success.swift
+//  SuccessCreateAccount.swift
 //  Bankpf
 //
-//  Created by Luccas Santana Marinho on 23/05/22.
+//  Created by Luccas Santana Marinho on 27/05/22.
 //
 
 import UIKit
 
-class Success: UIViewController {
+class SuccessCreateAccount: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class Success: UIViewController {
     private lazy var titleView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Sucesso! E-mail enviado"
+        text.text = "Sucesso! Conta criada"
         text.font = UIFont.boldSystemFont(ofSize: 22)
         text.textColor = .black
         text.textAlignment = .center
@@ -71,7 +71,7 @@ class Success: UIViewController {
     private lazy var textView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Por favor, solicitamos que \nassim que possível, verifique \nseu e-mail e altere sua senha"
+        text.text = "Que legal seja muito bem vindo ao \nbankpf, sem mais delongas, vamos \npara sua conta?"
         text.font = UIFont.systemFont(ofSize: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
@@ -83,7 +83,7 @@ class Success: UIViewController {
         let button = Buttons().button()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .colorDefault
-        button.setTitle("Voltar", for: .normal)
+        button.setTitle("Ir para meu login", for: .normal)
         button.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
         return button
     }()
@@ -102,4 +102,3 @@ class Success: UIViewController {
         view.window!.layer.add(transition, forKey: kCATransition)
     }
 }
-

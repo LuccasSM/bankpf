@@ -249,10 +249,10 @@ class CreateAccount: UIViewController {
     }
     
     @objc func enviarAccount() {
-        if self.tfEmail.validateEmail() {
-            print("Usuário forneceu email certo com @")
+        if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() {
+            self.present(SuccessCreateAccount(), animated: true)
         } else {
-            print("Usuário NAO forneceu email certo com @")
+            self.present(ErrorAccount(), animated: true)
         }
     }
     
@@ -290,15 +290,6 @@ class CreateAccount: UIViewController {
     // MARK: Travando o limite de caracteres para o UITextField
 
 extension CreateAccount: UITextFieldDelegate {
-    
-    // MARK: Validando email
-    
-    func validateEmail() -> Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let validateRegex = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return validateRegex.evaluate(with: self.tfEmail)
-    }
-    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         var appendString = ""
         var maxLength = 6

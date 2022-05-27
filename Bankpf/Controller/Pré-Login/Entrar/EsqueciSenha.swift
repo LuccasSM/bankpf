@@ -116,10 +116,10 @@ class EsqueciSenha: UIViewController {
     
     @objc func enviarEmail() {
         if self.tfEmail.validateEmail() {
-            self.present(Success(), animated: true)
+            self.present(SuccessSenha(), animated: true)
         } else {
             if let text = tfEmail.text, !text.isEmpty {
-                self.present(Error(), animated: true)
+                self.present(ErrorAccount(), animated: true)
                 textVazio.isHidden = true
             } else {
                 textVazio.isHidden = false
@@ -129,15 +129,5 @@ class EsqueciSenha: UIViewController {
     
     @objc func hideKeyboard() {
         self.view.endEditing(true)
-    }
-}
-
-    // MARK: Validando email
-
-extension UITextField {
-    func validateEmail() -> Bool {
-        let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-        let validateRegex = NSPredicate(format: "SELF MATCHES %@", emailRegex)
-        return validateRegex.evaluate(with: self.text)
     }
 }
