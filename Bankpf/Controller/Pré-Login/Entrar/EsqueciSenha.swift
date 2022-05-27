@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class EsqueciSenha: UIViewController {
+    
+    private let progress = JGProgressHUD(style: .dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -115,16 +118,20 @@ class EsqueciSenha: UIViewController {
     // MARK: Lógicas
     
     @objc func enviarEmail() {
-        if self.tfEmail.validateEmail() {
-            self.present(SuccessSenha(), animated: true)
-        } else {
-            if let text = tfEmail.text, !text.isEmpty {
-                self.present(ErrorAccount(), animated: true)
-                textVazio.isHidden = true
+        progress.show(in: view)
+        self.progress.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
+            if self.tfEmail.validateEmail() {
+                self.present(SuccessSenha(), animated: true)
             } else {
-                textVazio.isHidden = false
+                if let text = self.tfEmail.text, !text.isEmpty {
+                    self.present(ErrorAccount(), animated: true)
+                    self.textVazio.isHidden = true
+                } else {
+                    self.textVazio.isHidden = false
+                }
             }
-        }
+        });
     }
     
     @objc func hideKeyboard() {

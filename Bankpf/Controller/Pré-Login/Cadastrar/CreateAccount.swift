@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class CreateAccount: UIViewController {
+    
+    private let progress = JGProgressHUD(style: .dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -212,6 +215,7 @@ class CreateAccount: UIViewController {
         button.layer.cornerRadius = 10
         button.addTarget(self, action: #selector(enviarAccount), for: .touchUpInside)
         return button
+        
     }()
 
     private lazy var porqueDados: UILabel = {
@@ -249,11 +253,15 @@ class CreateAccount: UIViewController {
     }
     
     @objc func enviarAccount() {
-        if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && tfSenha.text == tfConfirmarSenha.text {
-            self.present(SuccessCreateAccount(), animated: true)
-        } else {
-            self.present(ErrorAccount(), animated: true)
-        }
+        progress.show(in: view)
+        self.progress.dismiss()
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
+            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
+                self.present(SuccessCreateAccount(), animated: true)
+            } else {
+                self.present(ErrorAccount(), animated: true)
+            }
+        });
     }
     
     @objc func porqueDadosPage() {
