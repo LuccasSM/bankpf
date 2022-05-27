@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE16128B53C3034FCEEE39D9 /* Pods_Bankpf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */; };
 		F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBB2835B648003236A0 /* TermsPolicy.swift */; };
 		F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */; };
 		F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */; };
@@ -35,6 +36,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankpf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.release.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.release.xcconfig"; sourceTree = "<group>"; };
+		C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.debug.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.debug.xcconfig"; sourceTree = "<group>"; };
 		F82B4FBB2835B648003236A0 /* TermsPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPolicy.swift; sourceTree = "<group>"; };
 		F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBankpf.swift; sourceTree = "<group>"; };
@@ -69,12 +73,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE16128B53C3034FCEEE39D9 /* Pods_Bankpf.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		980069582F18D502CA61D430 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE6F7E644AAA017D1FFD7089 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */,
+				ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F83DB304283C32F000708F3D /* Cadastrar */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +123,8 @@
 			children = (
 				F83E88312833079D00163411 /* Bankpf */,
 				F83E88302833079D00163411 /* Products */,
+				DE6F7E644AAA017D1FFD7089 /* Pods */,
+				980069582F18D502CA61D430 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,7 +183,7 @@
 		F8A4951628330885007F0CFE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8A49518283308AB007F0CFE /* Pré-Login */,
+				F8A49518283308AB007F0CFE /* Pré-Login */,
 				F8A49517283308A0007F0CFE /* Splash */,
 			);
 			path = Controller;
@@ -172,14 +197,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		F8A49518283308AB007F0CFE /* Pré-Login */ = {
+		F8A49518283308AB007F0CFE /* Pré-Login */ = {
 			isa = PBXGroup;
 			children = (
 				F83DB305283C331400708F3D /* Entrar */,
 				F8AEDE4F2837D15F006D5AF4 /* Agencias */,
 				F83DB304283C32F000708F3D /* Cadastrar */,
 				F8A49519283308BD007F0CFE /* PreLogin.swift */,
-				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
+				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
 				F8AEDE4D2837D10D006D5AF4 /* Transferencias */,
 			);
 			name = "Pré-Login";
@@ -196,7 +221,7 @@
 			path = Transferencias;
 			sourceTree = "<group>";
 		};
-		F8AEDE4E2837D124006D5AF4 /* Sobre nós */ = {
+		F8AEDE4E2837D124006D5AF4 /* Sobre nós */ = {
 			isa = PBXGroup;
 			children = (
 				F8F6FDBB28333066001B4338 /* SobreNos.swift */,
@@ -221,9 +246,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F83E88432833079F00163411 /* Build configuration list for PBXNativeTarget "Bankpf" */;
 			buildPhases = (
+				38774242D5FCB606F280F22C /* [CP] Check Pods Manifest.lock */,
 				F83E882B2833079D00163411 /* Sources */,
 				F83E882C2833079D00163411 /* Frameworks */,
 				F83E882D2833079D00163411 /* Resources */,
+				9E9A8CB40A28B1DAB84E5130 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -279,6 +306,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		38774242D5FCB606F280F22C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bankpf-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9E9A8CB40A28B1DAB84E5130 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankpf/Pods-Bankpf-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bankpf/Pods-Bankpf-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bankpf/Pods-Bankpf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F83E882B2833079D00163411 /* Sources */ = {
@@ -450,6 +519,7 @@
 		};
 		F83E88442833079F00163411 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -482,6 +552,7 @@
 		};
 		F83E88452833079F00163411 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
