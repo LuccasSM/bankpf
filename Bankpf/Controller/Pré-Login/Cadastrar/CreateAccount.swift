@@ -216,7 +216,7 @@ class CreateAccount: UIViewController {
 
     private lazy var porqueDados: UILabel = {
         let lbl = UILabel()
-//        let tapAction = UITapGestureRecognizer(target: self, action: #selector(senhaEsqueci))
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(porqueDadosPage))
 
         lbl.translatesAutoresizingMaskIntoConstraints = false
         let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
@@ -231,7 +231,7 @@ class CreateAccount: UIViewController {
         lbl.textColor = .colorDefault
         lbl.textAlignment = .center
         lbl.backgroundColor = .grayDefault
-//        lbl.addGestureRecognizer(tapAction)
+        lbl.addGestureRecognizer(tapAction)
         return lbl
     }()
     
@@ -254,6 +254,10 @@ class CreateAccount: UIViewController {
         } else {
             print("Usuário NAO forneceu email certo com @")
         }
+    }
+    
+    @objc func porqueDadosPage() {
+        self.present(PorqueDados(), animated: true)
     }
     
     // MARK: Lógicas

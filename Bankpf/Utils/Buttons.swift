@@ -9,7 +9,7 @@ import UIKit
 
 class Buttons: UIButton {
     func button() -> UIButton {
-        let button = UIButton(frame: .zero)
+        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.adjustsImageWhenHighlighted = false
         button.layer.cornerRadius = 10

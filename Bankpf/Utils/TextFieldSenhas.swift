@@ -9,7 +9,7 @@ import UIKit
 
 class TextFieldSenhas: UITextField {
     func tf() -> UITextField {
-        let tf = UITextField(frame: .zero)
+        let tf = UITextField()
         tf.translatesAutoresizingMaskIntoConstraints = false
         tf.layer.borderWidth = 1
         tf.layer.borderColor = CGColor(red: 55/255, green: 73/255, blue: 154/255, alpha: 1)

@@ -43,14 +43,14 @@ class Error: UIViewController {
     }
     
     private lazy var image: UIImageView = {
-        let image = UIImageView(frame: .zero)
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "error")
         return image
     }()
     
     private lazy var viewWhite: UIView = {
-        let view = UIView(frame: .zero)
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .grayDefault
         view.layer.cornerRadius = 10
@@ -58,7 +58,7 @@ class Error: UIViewController {
     }()
     
     private lazy var titleView: UILabel = {
-        let text = UILabel(frame: .zero)
+        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Erro!"
         text.font = UIFont.boldSystemFont(ofSize: 22)
@@ -69,7 +69,7 @@ class Error: UIViewController {
     }()
     
     private lazy var textView: UILabel = {
-        let text = UILabel(frame: .zero)
+        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Por favor, certifique-se que \npreencheu os dados corretamente"
         text.font = UIFont.systemFont(ofSize: 16)
@@ -88,7 +88,7 @@ class Error: UIViewController {
         return button
     }()
     
-    // MARK: - Navegacoes da tela
+    // MARK: Navegacoes da tela
     
     @objc func returnButton() {
         self.dismiss(animated: true, completion: nil)

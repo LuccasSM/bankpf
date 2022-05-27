@@ -25,6 +25,7 @@
 		F85A94E82837D4E500DD3783 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E72837D4E500DD3783 /* Images.swift */; };
 		F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */; };
 		F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A49519283308BD007F0CFE /* PreLogin.swift */; };
+		F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF12F4284042D400856212 /* PorqueDados.swift */; };
 		F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */; };
 		F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6FDB928333034001B4338 /* Transferencias.swift */; };
 		F8F6FDBC28333066001B4338 /* SobreNos.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6FDBB28333066001B4338 /* SobreNos.swift */; };
@@ -52,6 +53,7 @@
 		F85A94E72837D4E500DD3783 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		F8A49519283308BD007F0CFE /* PreLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLogin.swift; sourceTree = "<group>"; };
+		F8DF12F4284042D400856212 /* PorqueDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorqueDados.swift; sourceTree = "<group>"; };
 		F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSenhas.swift; sourceTree = "<group>"; };
 		F8F6FDB928333034001B4338 /* Transferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferencias.swift; sourceTree = "<group>"; };
 		F8F6FDBB28333066001B4338 /* SobreNos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SobreNos.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */,
+				F8DF12F4284042D400856212 /* PorqueDados.swift */,
 			);
 			path = Cadastrar;
 			sourceTree = "<group>";
@@ -81,7 +84,9 @@
 			isa = PBXGroup;
 			children = (
 				F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */,
+				F83DB30C283C5CEC00708F3D /* Error.swift */,
 				F83DB308283C54DD00708F3D /* EsqueciSenha.swift */,
+				F83DB30A283C5CCD00708F3D /* Success.swift */,
 			);
 			path = Entrar;
 			sourceTree = "<group>";
@@ -128,9 +133,7 @@
 				F83E883B2833079F00163411 /* Assets.xcassets */,
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
-				F83DB30C283C5CEC00708F3D /* Error.swift */,
 				F83E88402833079F00163411 /* Info.plist */,
-				F83DB30A283C5CCD00708F3D /* Success.swift */,
 				F83DB306283C375200708F3D /* TextField.swift */,
 				F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */,
 			);
@@ -283,6 +286,7 @@
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
 				F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */,
 				F85A94E82837D4E500DD3783 /* Images.swift in Sources */,
+				F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */,
 				F8F6FDBC28333066001B4338 /* SobreNos.swift in Sources */,
 				F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */,
 				F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */,

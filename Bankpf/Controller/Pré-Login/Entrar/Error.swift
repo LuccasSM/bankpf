@@ -1,5 +1,5 @@
 //
-//  Success.swift
+//  Error.swift
 //  Bankpf
 //
 //  Created by Luccas Santana Marinho on 23/05/22.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Success: UIViewController {
+class Error: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,14 +43,14 @@ class Success: UIViewController {
     }
     
     private lazy var image: UIImageView = {
-        let image = UIImageView(frame: .zero)
+        let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
-        image.image = UIImage(named: "success")
+        image.image = UIImage(named: "error")
         return image
     }()
     
     private lazy var viewWhite: UIView = {
-        let view = UIView(frame: .zero)
+        let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .grayDefault
         view.layer.cornerRadius = 10
@@ -58,9 +58,9 @@ class Success: UIViewController {
     }()
     
     private lazy var titleView: UILabel = {
-        let text = UILabel(frame: .zero)
+        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Sucesso! E-mail enviado"
+        text.text = "Erro!"
         text.font = UIFont.boldSystemFont(ofSize: 22)
         text.textColor = .black
         text.textAlignment = .center
@@ -69,9 +69,9 @@ class Success: UIViewController {
     }()
     
     private lazy var textView: UILabel = {
-        let text = UILabel(frame: .zero)
+        let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Por favor, solicitamos que \nassim que possível, verifique \nseu e-mail e altere sua senha"
+        text.text = "Por favor, certifique-se que \npreencheu os dados corretamente"
         text.font = UIFont.systemFont(ofSize: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
@@ -88,18 +88,9 @@ class Success: UIViewController {
         return button
     }()
     
-    // MARK: - Navegacoes da tela
+    // MARK: Navegacoes da tela
     
     @objc func returnButton() {
-        let controller = ClientBankpf()
-        let navVC = UINavigationController(rootViewController: controller)
-        navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: false, completion: nil)
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
+        self.dismiss(animated: true, completion: nil)
     }
 }
-
