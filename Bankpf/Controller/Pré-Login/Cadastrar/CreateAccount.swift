@@ -305,6 +305,10 @@ extension CreateAccount: UITextFieldDelegate {
     // MARK: Máscara do CPF
         
         if textField.placeholder == "CPF" {
+            guard CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) else {
+                return false
+            }
+            
             if range.length == 0 {
                 switch range.location {
                 case 3:

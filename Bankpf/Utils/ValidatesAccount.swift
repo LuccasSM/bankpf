@@ -11,7 +11,7 @@ import UIKit
 
 extension UITextField {
     func validateName() -> Bool {
-        let nameRegex = ".{3,1000}"
+        let nameRegex = "[A-Za-z ]{3,1000}"
         let validateRegex = NSPredicate(format: "SELF MATCHES %@", nameRegex)
         return validateRegex.evaluate(with: self.text)
     }
