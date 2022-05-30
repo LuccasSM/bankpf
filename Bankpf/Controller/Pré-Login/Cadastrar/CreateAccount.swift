@@ -256,7 +256,7 @@ class CreateAccount: UIViewController {
         progress.show(in: view)
         self.progress.dismiss()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
-            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.validateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
+            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text && self.validateDataTf() {
                 self.present(SuccessCreateAccount(), animated: true)
             } else {
                 self.present(ErrorAccount(), animated: true)
@@ -269,6 +269,28 @@ class CreateAccount: UIViewController {
     }
     
     // MARK: Lógicas
+    
+    func validateDataTf() -> Bool {
+        let dataString = self.tfData.text!
+        let dataAtual = Date()
+        let formatador = DateFormatter()
+        formatador.dateFormat = "dd/MM/yyyy"
+
+        if let dataFinal = formatador.date(from: dataString) {
+            if dataFinal < dataAtual {
+                self.present(SuccessCreateAccount(), animated: true)
+                print("Data OK, menor que a data de hoje")
+            } else {
+                self.present(ErrorAccount(), animated: true)
+                print("Data OK, porém maior que a data de hoje")
+            }
+        } else {
+            self.present(ErrorAccount(), animated: true)
+            print("Data inexistente")
+        }
+        
+        return true
+    }
     
     @objc func mostrarOcultarSenha() {
         if tfSenha.isSecureTextEntry == false {
@@ -332,6 +354,10 @@ extension CreateAccount: UITextFieldDelegate {
     // MARK: Máscara da Data de nascimento
         
         if textField.placeholder == "Data de nascimento" {
+            guard CharacterSet(charactersIn: "0123456789").isSuperset(of: CharacterSet(charactersIn: string)) else {
+                return false
+            }
+            
             if range.length == 0 {
                 switch range.location {
                 case 2:

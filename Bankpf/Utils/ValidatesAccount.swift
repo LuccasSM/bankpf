@@ -28,7 +28,7 @@ extension UITextField {
         return validateRegex.evaluate(with: self.text)
     }
     
-    func validateData() -> Bool {
+    func twoValidateData() -> Bool {
         let dataRegex = ".{10}"
         let validateRegex = NSPredicate(format: "SELF MATCHES %@", dataRegex)
         return validateRegex.evaluate(with: self.text)
