@@ -256,7 +256,7 @@ class CreateAccount: UIViewController {
         progress.show(in: view)
         self.progress.dismiss()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
-            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text && self.validateDataTf() {
+            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.validateDataTf() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
                 self.present(SuccessCreateAccount(), animated: true)
             } else {
                 self.present(ErrorAccount(), animated: true)
