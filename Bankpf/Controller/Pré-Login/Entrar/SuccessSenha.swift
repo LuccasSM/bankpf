@@ -91,8 +91,7 @@ class SuccessSenha: UIViewController {
     // MARK: Navegacoes da tela
     
     @objc func returnButton() {
-        let controller = PreLogin()
-        let navVC = UINavigationController(rootViewController: controller)
+        let navVC = PreLogin()
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: false, completion: nil)
         let transition = CATransition()
