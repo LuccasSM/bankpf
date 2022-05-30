@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		BE16128B53C3034FCEEE39D9 /* Pods_Bankpf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */; };
+		F8228F8B28453CAD00D7C2B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8228F8A28453CAD00D7C2B1 /* Constants.swift */; };
+		F826D16D284519D200705E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F826D16C284519D200705E26 /* GoogleService-Info.plist */; };
 		F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBB2835B648003236A0 /* TermsPolicy.swift */; };
 		F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */; };
 		F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */; };
@@ -28,6 +30,7 @@
 		F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A49519283308BD007F0CFE /* PreLogin.swift */; };
 		F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */; };
 		F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */; };
+		F8B561B2284534460011FE4E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B561B1284534460011FE4E /* AuthService.swift */; };
 		F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8DF12F4284042D400856212 /* PorqueDados.swift */; };
 		F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */; };
 		F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8F6FDB928333034001B4338 /* Transferencias.swift */; };
@@ -39,6 +42,8 @@
 		94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankpf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.release.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.release.xcconfig"; sourceTree = "<group>"; };
 		C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.debug.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.debug.xcconfig"; sourceTree = "<group>"; };
+		F8228F8A28453CAD00D7C2B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F826D16C284519D200705E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F82B4FBB2835B648003236A0 /* TermsPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPolicy.swift; sourceTree = "<group>"; };
 		F82B4FBD2835C8A8003236A0 /* CreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccount.swift; sourceTree = "<group>"; };
 		F82B4FBF2835C8DC003236A0 /* ClientBankpf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientBankpf.swift; sourceTree = "<group>"; };
@@ -61,6 +66,7 @@
 		F8A49519283308BD007F0CFE /* PreLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLogin.swift; sourceTree = "<group>"; };
 		F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesAccount.swift; sourceTree = "<group>"; };
 		F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreateAccount.swift; sourceTree = "<group>"; };
+		F8B561B1284534460011FE4E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F8DF12F4284042D400856212 /* PorqueDados.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PorqueDados.swift; sourceTree = "<group>"; };
 		F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldSenhas.swift; sourceTree = "<group>"; };
 		F8F6FDB928333034001B4338 /* Transferencias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transferencias.swift; sourceTree = "<group>"; };
@@ -139,9 +145,10 @@
 			isa = PBXGroup;
 			children = (
 				F8A4951628330885007F0CFE /* Controller */,
-				F8A495152833086E007F0CFE /* View */,
-				F8A4951428330854007F0CFE /* Utils */,
+				F8B561B3284534D30011FE4E /* Model */,
 				F8A4951328330809007F0CFE /* Resources */,
+				F8A4951428330854007F0CFE /* Utils */,
+				F8A495152833086E007F0CFE /* View */,
 			);
 			path = Bankpf;
 			sourceTree = "<group>";
@@ -162,6 +169,7 @@
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
 				F83DB30C283C5CEC00708F3D /* ErrorAccount.swift */,
+				F826D16C284519D200705E26 /* GoogleService-Info.plist */,
 				F83E88402833079F00163411 /* Info.plist */,
 				F83DB306283C375200708F3D /* TextField.swift */,
 				F8E62708283F170000DA1FEF /* TextFieldSenhas.swift */,
@@ -238,6 +246,23 @@
 			path = Agencias;
 			sourceTree = "<group>";
 		};
+		F8B561B02845342A0011FE4E /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F8B561B1284534460011FE4E /* AuthService.swift */,
+				F8228F8A28453CAD00D7C2B1 /* Constants.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		F8B561B3284534D30011FE4E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F8B561B02845342A0011FE4E /* API */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -299,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F83E883F2833079F00163411 /* LaunchScreen.storyboard in Resources */,
+				F826D16D284519D200705E26 /* GoogleService-Info.plist in Resources */,
 				F83E883C2833079F00163411 /* Assets.xcassets in Resources */,
 				F83E883A2833079D00163411 /* Main.storyboard in Resources */,
 			);
@@ -354,6 +380,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F82D368D2833C53C009405C7 /* Buttons.swift in Sources */,
+				F8B561B2284534460011FE4E /* AuthService.swift in Sources */,
 				F83E88372833079D00163411 /* Splash.swift in Sources */,
 				F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */,
 				F83DB307283C375200708F3D /* TextField.swift in Sources */,
@@ -375,6 +402,7 @@
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
 				F83DB30D283C5CEC00708F3D /* ErrorAccount.swift in Sources */,
 				F83E88352833079D00163411 /* SceneDelegate.swift in Sources */,
+				F8228F8B28453CAD00D7C2B1 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,10 +550,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GD8E6FY3R6;
+				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor, o bankpf precisa de acesso à sua localização";
@@ -540,9 +568,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.santander.enterprise.ecomigosantander;
+				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Santander E Comigo Enterprise Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -555,10 +583,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
-				CODE_SIGN_STYLE = Manual;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GD8E6FY3R6;
+				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Por favor, o bankpf precisa de acesso à sua localização";
@@ -573,9 +601,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.santander.enterprise.ecomigosantander;
+				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "Santander E Comigo Enterprise Distribution";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

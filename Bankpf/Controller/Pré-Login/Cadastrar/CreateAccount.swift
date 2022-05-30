@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 import JGProgressHUD
 
 class CreateAccount: UIViewController {
@@ -255,13 +256,25 @@ class CreateAccount: UIViewController {
     @objc func enviarAccount() {
         progress.show(in: view)
         self.progress.dismiss()
-        DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
-            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.validateDataTf() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
-                self.present(SuccessCreateAccount(), animated: true)
-            } else {
-                self.present(ErrorAccount(), animated: true)
-            }
-        });
+        
+        guard let name = tfNome.text else { return }
+        guard let email = tfEmail.text else { return }
+        guard let cpf = tfCPF.text else { return }
+        guard let data = tfData.text else { return }
+        guard let password = tfSenha.text else { return }
+        guard let confirmPassword = tfConfirmarSenha.text else { return }
+        let credentials = AuthCredentials(name: name, email: email, cpf: cpf, data: data, password: password, confirmPassword: confirmPassword)
+        
+        AuthService.shared.registerUser(credentials: credentials) { (error, ref) in
+            DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
+                if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.validateDataTf() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
+                        self.present(SuccessCreateAccount(), animated: true)
+                    } else {
+                        self.present(ErrorAccount(), animated: true)
+                    }
+                }
+            );
+        }
     }
     
     @objc func porqueDadosPage() {

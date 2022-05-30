@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>839730524149-qvtsp4pjlf7e82mhdegjjjj4rofak047.apps.googleusercontent.com</string>
+	<key>DATABASE_URL</key>
+	<string>https://bankpf-7a6f9-default-rtdb.firebaseio.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.839730524149-qvtsp4pjlf7e82mhdegjjjj4rofak047</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCBlUu2Y57aKWhKuuVJ_dlHH_zBAlAwYHA</string>
+	<key>GCM_SENDER_ID</key>
+	<string>839730524149</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>bankpf</string>
+	<key>PROJECT_ID</key>
+	<string>bankpf-7a6f9</string>
+	<key>STORAGE_BUCKET</key>
+	<string>bankpf-7a6f9.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:839730524149:ios:b90ab25d3fad1f6f637abc</string>
+</dict>
+</plist>
