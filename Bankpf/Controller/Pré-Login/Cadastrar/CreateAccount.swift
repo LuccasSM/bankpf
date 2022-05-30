@@ -50,7 +50,6 @@ class CreateAccount: UIViewController {
         self.scrollViewContainer.addArrangedSubview(tfNome)
         self.scrollViewContainer.addArrangedSubview(tfEmail)
         self.scrollViewContainer.addArrangedSubview(tfCPF)
-        self.scrollViewContainer.addArrangedSubview(tfData)
         self.scrollViewContainer.addArrangedSubview(tfSenha)
         self.tfSenha.addSubview(olhoImageSenha)
         self.scrollViewContainer.addArrangedSubview(tfConfirmarSenha)
@@ -83,8 +82,6 @@ class CreateAccount: UIViewController {
             tfEmail.heightAnchor.constraint(equalToConstant: 60),
             
             tfCPF.heightAnchor.constraint(equalToConstant: 60),
-            
-            tfData.heightAnchor.constraint(equalToConstant: 60),
             
             tfSenha.heightAnchor.constraint(equalToConstant: 60),
             
@@ -160,14 +157,6 @@ class CreateAccount: UIViewController {
         let tf = TextField().tf()
         tf.delegate = self
         tf.attributedPlaceholder = NSAttributedString(string: "CPF", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
-        tf.keyboardType = .asciiCapableNumberPad
-        return tf
-    }()
-
-    private lazy var tfData: UITextField = {
-        let tf = TextField().tf()
-        tf.delegate = self
-        tf.attributedPlaceholder = NSAttributedString(string: "Data de nascimento", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         tf.keyboardType = .asciiCapableNumberPad
         return tf
     }()
@@ -257,24 +246,23 @@ class CreateAccount: UIViewController {
         progress.show(in: view)
         self.progress.dismiss()
         
+        guard let name = tfNome.text else { return }
+        guard let email = tfEmail.text else { return }
+        guard let cpf = tfCPF.text else { return }
+        guard let password = tfSenha.text else { return }
+        guard let confirmPassword = tfConfirmarSenha.text else { return }
+        
+        let credentials = AuthCredentials(name: name, email: email, cpf: cpf, password: password, confirmPassword: confirmPassword)
+        
         DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
-            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.validateDataTf() && self.tfData.twoValidateData() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
-                self.present(SuccessCreateAccount(), animated: true)
+            if self.tfNome.validateName() && self.tfEmail.validateEmail() && self.tfCPF.validateCPF() && self.tfSenha.validatePassword() && self.tfConfirmarSenha.validateConfirmPassword() && self.tfSenha.text == self.tfConfirmarSenha.text {
+                AuthService.shared.registerUser(credentials: credentials) { (error, ref) in
+                    self.present(SuccessCreateAccount(), animated: true)
+                }
             } else {
                 self.present(ErrorAccount(), animated: true)
             }
         });
-        
-        guard let name = tfNome.text else { return }
-        guard let email = tfEmail.text else { return }
-        guard let cpf = tfCPF.text else { return }
-        guard let data = tfData.text else { return }
-        guard let password = tfSenha.text else { return }
-        guard let confirmPassword = tfConfirmarSenha.text else { return }
-        
-        let credentials = AuthCredentials(name: name, email: email, cpf: cpf, data: data, password: password, confirmPassword: confirmPassword)
-        
-        AuthService.shared.registerUser(credentials: credentials) { (error, ref) in }
     }
     
     @objc func porqueDadosPage() {
@@ -282,26 +270,6 @@ class CreateAccount: UIViewController {
     }
     
     // MARK: Lógicas
-    
-    func validateDataTf() -> Bool {
-        let dataString = self.tfData.text!
-        let dataAtual = Date()
-        let formatador = DateFormatter()
-        formatador.dateFormat = "dd/MM/yyyy"
-
-        if let dataFinal = formatador.date(from: dataString) {
-            if dataFinal < dataAtual {
-                self.present(SuccessCreateAccount(), animated: true)
-            } else {
-                self.present(ErrorAccount(), animated: true)
-            }
-            print(dataFinal)
-        } else {
-            self.present(ErrorAccount(), animated: true)
-        }
-        
-        return true
-    }
     
     @objc func mostrarOcultarSenha() {
         if tfSenha.isSecureTextEntry == false {

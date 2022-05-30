@@ -12,7 +12,6 @@ struct AuthCredentials {
     let name: String
     let email: String
     let cpf: String
-    let data: String
     let password: String
     let confirmPassword: String
 }
@@ -24,7 +23,6 @@ struct AuthService {
         let name = credentials.name
         let email = credentials.email
         let cpf = credentials.cpf
-        let data = credentials.data
         let password = credentials.password
         let confirmPassword = credentials.confirmPassword
         
@@ -35,7 +33,7 @@ struct AuthService {
             }
             
             guard let uid = result?.user.uid else { return }
-            let values = ["name": name, "email": email, "cpf": cpf, "data": data, "password": password, "confirmPassword": confirmPassword]
+            let values = ["name": name, "email": email, "cpf": cpf, "password": password, "confirmPassword": confirmPassword]
             
             REF_USERS.child(uid).updateChildValues(values, withCompletionBlock: completion)
         }

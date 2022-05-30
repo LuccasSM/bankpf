@@ -27,12 +27,6 @@ extension UITextField {
         let validateRegex = NSPredicate(format: "SELF MATCHES %@", cpfRegex)
         return validateRegex.evaluate(with: self.text)
     }
-    
-    func twoValidateData() -> Bool {
-        let dataRegex = ".{10}"
-        let validateRegex = NSPredicate(format: "SELF MATCHES %@", dataRegex)
-        return validateRegex.evaluate(with: self.text)
-    }
 
     func validatePassword() -> Bool {
         let passwordRegex = ".{6,}"
