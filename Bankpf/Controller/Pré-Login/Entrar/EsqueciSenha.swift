@@ -175,8 +175,6 @@ extension EsqueciSenha: MFMailComposeViewControllerDelegate {
         controller.dismiss(animated: true)
         if result == .sent {
             self.present(SuccessSenha(), animated: true)
-        } else {
-            self.present(ErrorAccount(), animated: true)
         }
     }
 }
