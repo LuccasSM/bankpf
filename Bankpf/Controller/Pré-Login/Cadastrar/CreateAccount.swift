@@ -279,14 +279,11 @@ class CreateAccount: UIViewController {
         if let dataFinal = formatador.date(from: dataString) {
             if dataFinal < dataAtual {
                 self.present(SuccessCreateAccount(), animated: true)
-                print("Data OK, menor que a data de hoje")
             } else {
                 self.present(ErrorAccount(), animated: true)
-                print("Data OK, porém maior que a data de hoje")
             }
         } else {
             self.present(ErrorAccount(), animated: true)
-            print("Data inexistente")
         }
         
         return true

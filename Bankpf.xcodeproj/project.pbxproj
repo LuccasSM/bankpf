@@ -94,7 +94,6 @@
 				C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */,
 				ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -183,7 +182,7 @@
 		F8A4951628330885007F0CFE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				F8A49518283308AB007F0CFE /* Pré-Login */,
+				F8A49518283308AB007F0CFE /* Pré-Login */,
 				F8A49517283308A0007F0CFE /* Splash */,
 			);
 			path = Controller;
@@ -197,14 +196,14 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		F8A49518283308AB007F0CFE /* Pré-Login */ = {
+		F8A49518283308AB007F0CFE /* Pré-Login */ = {
 			isa = PBXGroup;
 			children = (
 				F83DB305283C331400708F3D /* Entrar */,
 				F8AEDE4F2837D15F006D5AF4 /* Agencias */,
 				F83DB304283C32F000708F3D /* Cadastrar */,
 				F8A49519283308BD007F0CFE /* PreLogin.swift */,
-				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
+				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
 				F8AEDE4D2837D10D006D5AF4 /* Transferencias */,
 			);
 			name = "Pré-Login";
@@ -221,7 +220,7 @@
 			path = Transferencias;
 			sourceTree = "<group>";
 		};
-		F8AEDE4E2837D124006D5AF4 /* Sobre nós */ = {
+		F8AEDE4E2837D124006D5AF4 /* Sobre nós */ = {
 			isa = PBXGroup;
 			children = (
 				F8F6FDBB28333066001B4338 /* SobreNos.swift */,

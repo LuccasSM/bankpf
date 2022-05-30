@@ -7,6 +7,7 @@
 
 import UIKit
 import JGProgressHUD
+import MessageUI
 
 class EsqueciSenha: UIViewController {
     
@@ -122,7 +123,17 @@ class EsqueciSenha: UIViewController {
         self.progress.dismiss()
         DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
             if self.tfEmail.validateEmail() {
-                self.present(SuccessSenha(), animated: true)
+                guard MFMailComposeViewController.canSendMail() else {
+                    return
+                }
+                
+                let composer = MFMailComposeViewController()
+                composer.mailComposeDelegate = self
+                composer.setToRecipients([self.tfEmail.text!])
+                composer.setSubject("recuperar senha!".uppercased())
+                composer.setMessageBody("Olá recuperando sua senha, Senha nova é, 123456. OBS: Nunca a compartilhe com ninguém! Qualquer dúvida nos encontramos à disposição! Atenciosamente equipe de tecnologia Banco bankpf S.A (Email: ajuda-tecnologia@bankpf.com.br)", isHTML: false)
+                
+                self.present(composer, animated: true)
             } else {
                 if let text = self.tfEmail.text, !text.isEmpty {
                     self.present(ErrorAccount(), animated: true)
@@ -136,5 +147,32 @@ class EsqueciSenha: UIViewController {
     
     @objc func hideKeyboard() {
         self.view.endEditing(true)
+    }
+}
+
+extension EsqueciSenha: MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if let _ = error {
+            controller.dismiss(animated: true)
+            return
+        }
+        
+        switch result {
+        case .cancelled:
+            print("Cancelado")
+        case .failed:
+            print("Falha ao enviar")
+        case .saved:
+            print("Salvo")
+        case .sent:
+            print("Email enviado")
+        @unknown default:
+            break
+        }
+        
+        controller.dismiss(animated: true)
+        self.present(SuccessSenha(), animated: true)
     }
 }

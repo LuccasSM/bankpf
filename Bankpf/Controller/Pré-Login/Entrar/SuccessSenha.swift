@@ -91,7 +91,7 @@ class SuccessSenha: UIViewController {
     // MARK: Navegacoes da tela
     
     @objc func returnButton() {
-        let controller = ClientBankpf()
+        let controller = PreLogin()
         let navVC = UINavigationController(rootViewController: controller)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: false, completion: nil)
