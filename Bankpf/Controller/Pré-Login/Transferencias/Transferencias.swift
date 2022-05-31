@@ -27,11 +27,11 @@ class Transferencias: UIViewController {
         MyCustomData(title: "TED", image: Image.ted),
         MyCustomData(title: "TEF", image: Image.tef),
         MyCustomData(title: "Poupança", image: Image.poupanca),
-        MyCustomData(title: "Pagar: QrCode / \nCódigo de barras", image: Image.qrCode),
+        MyCustomData(title: "Pagar", image: Image.qrCode),
         MyCustomData(title: "Cheque especial", image: Image.cheque),
         MyCustomData(title: "Comprovantes", image: Image.comprovantes),
-        MyCustomData(title: "Movimentações \nda bolsa", image: Image.bolsa),
-        MyCustomData(title: "Transferir para \noutras instituições", image: Image.outras),
+        MyCustomData(title: "Bolsa", image: Image.bolsa),
+        MyCustomData(title: "Transferir", image: Image.outras),
     ]
     
     private lazy var collectionView: UICollectionView = {

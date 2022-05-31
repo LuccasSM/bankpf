@@ -18,6 +18,7 @@ class TextFieldSenhas: UITextField {
         tf.leftViewMode = .always
         tf.keyboardType = .asciiCapableNumberPad
         tf.rightViewMode = .always
+        tf.font = UIFont(name: "AssociateSans-Light", size: 17)
         tf.isSecureTextEntry = true
         return tf
     }

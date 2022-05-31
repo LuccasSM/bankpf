@@ -72,7 +72,7 @@ class SuccessCreateAccount: UIViewController {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Que legal seja muito bem vindo ao \nbankpf, sem mais delongas, vamos \npara sua conta?"
-        text.font = UIFont.systemFont(ofSize: 16)
+        text.font = UIFont(name: "AssociateSans-Light", size: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
         text.numberOfLines = 0

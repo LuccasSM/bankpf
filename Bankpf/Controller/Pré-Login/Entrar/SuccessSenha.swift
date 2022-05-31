@@ -72,7 +72,7 @@ class SuccessSenha: UIViewController {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Por favor, solicitamos que \nassim que possível, verifique \nseu e-mail e altere sua senha"
-        text.font = UIFont.systemFont(ofSize: 16)
+        text.font = UIFont(name: "AssociateSans-Light", size: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
         text.numberOfLines = 0

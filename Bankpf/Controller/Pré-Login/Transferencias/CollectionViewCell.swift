@@ -21,8 +21,7 @@ class MyCustomCell: UICollectionViewCell {
     private lazy var title: UILabel = {
         let tl = UILabel()
         tl.translatesAutoresizingMaskIntoConstraints = false
-        tl.textAlignment = .center
-        tl.font = .systemFont(ofSize: 15, weight: .medium)
+        tl.font = UIFont(name: "AssociateSans-Light", size: 14)
         tl.textColor = .colorDefault
         tl.numberOfLines = 0
         return tl
@@ -33,13 +32,13 @@ class MyCustomCell: UICollectionViewCell {
         contentView.addSubview(img)
         contentView.addSubview(title)
         
-        img.widthAnchor.constraint(equalToConstant: 30).isActive = true
-        img.heightAnchor.constraint(equalToConstant: 30).isActive = true
-        img.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        img.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        img.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        img.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
         img.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -20).isActive = true
         
-        title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10).isActive = true
-        title.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        title.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -17).isActive = true
+        title.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 15).isActive = true
     }
     
     required init?(coder: NSCoder) {

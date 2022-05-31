@@ -141,7 +141,7 @@ class PreLogin: UIViewController {
         button.backgroundColor = .colorDefault
         button.adjustsImageWhenHighlighted = false
         button.setTitle("Transferências", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 11)
+        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 12)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -17, right: 0)
         button.addTarget(self, action: #selector(transferencias), for: .touchUpInside)
         return button
@@ -153,7 +153,7 @@ class PreLogin: UIViewController {
         button.backgroundColor = .colorDefault
         button.adjustsImageWhenHighlighted = false
         button.setTitle("Sobre nós", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 11)
+        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 12)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -17, right: 0)
         button.addTarget(self, action: #selector(sobreNos), for: .touchUpInside)
         return button
@@ -165,7 +165,7 @@ class PreLogin: UIViewController {
         button.backgroundColor = .colorDefault
         button.adjustsImageWhenHighlighted = false
         button.setTitle("Agências", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 11)
+        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 12)
         button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 0, bottom: -17, right: 0)
         button.addTarget(self, action: #selector(agencias), for: .touchUpInside)
         return button

@@ -72,7 +72,7 @@ class ErrorAccount: UIViewController {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Por favor, certifique-se que \npreencheu os dados corretamente"
-        text.font = UIFont.systemFont(ofSize: 16)
+        text.font = UIFont(name: "AssociateSans-Light", size: 16)
         text.textColor = .colorDefault
         text.textAlignment = .center
         text.numberOfLines = 0

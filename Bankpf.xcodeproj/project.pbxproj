@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		BE16128B53C3034FCEEE39D9 /* Pods_Bankpf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */; };
+		F80BFAA628463D8A000660EB /* AssociateSansBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFA9C28463D8A000660EB /* AssociateSansBold.otf */; };
+		F80BFAA728463D8A000660EB /* AssociateSansMedium.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFA9D28463D8A000660EB /* AssociateSansMedium.otf */; };
+		F80BFAA828463D8A000660EB /* AssociateSansRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFA9E28463D8A000660EB /* AssociateSansRegular.otf */; };
+		F80BFAA928463D8A000660EB /* AssociateSansMediumItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFA9F28463D8A000660EB /* AssociateSansMediumItalic.otf */; };
+		F80BFAAA28463D8A000660EB /* AssociateSansExtralightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA028463D8A000660EB /* AssociateSansExtralightItalic.otf */; };
+		F80BFAAB28463D8A000660EB /* AssociateSansExtralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA128463D8A000660EB /* AssociateSansExtralight.otf */; };
+		F80BFAAC28463D8A000660EB /* AssociateSansLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA228463D8A000660EB /* AssociateSansLight.otf */; };
+		F80BFAAD28463D8A000660EB /* AssociateSansBoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA328463D8A000660EB /* AssociateSansBoldItalic.otf */; };
+		F80BFAAE28463D8A000660EB /* AssociateSansRegularItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA428463D8A000660EB /* AssociateSansRegularItalic.otf */; };
+		F80BFAAF28463D8A000660EB /* AssociateSansLightItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = F80BFAA528463D8A000660EB /* AssociateSansLightItalic.otf */; };
 		F8228F8B28453CAD00D7C2B1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8228F8A28453CAD00D7C2B1 /* Constants.swift */; };
 		F826D16D284519D200705E26 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F826D16C284519D200705E26 /* GoogleService-Info.plist */; };
 		F82B4FBC2835B648003236A0 /* TermsPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F82B4FBB2835B648003236A0 /* TermsPolicy.swift */; };
@@ -43,6 +53,16 @@
 		94FD336EE1B471A60D5EF0E1 /* Pods_Bankpf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bankpf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.release.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.release.xcconfig"; sourceTree = "<group>"; };
 		C50E7AC751586CA4EB17DF4D /* Pods-Bankpf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bankpf.debug.xcconfig"; path = "Target Support Files/Pods-Bankpf/Pods-Bankpf.debug.xcconfig"; sourceTree = "<group>"; };
+		F80BFA9C28463D8A000660EB /* AssociateSansBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansBold.otf; sourceTree = "<group>"; };
+		F80BFA9D28463D8A000660EB /* AssociateSansMedium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansMedium.otf; sourceTree = "<group>"; };
+		F80BFA9E28463D8A000660EB /* AssociateSansRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansRegular.otf; sourceTree = "<group>"; };
+		F80BFA9F28463D8A000660EB /* AssociateSansMediumItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansMediumItalic.otf; sourceTree = "<group>"; };
+		F80BFAA028463D8A000660EB /* AssociateSansExtralightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansExtralightItalic.otf; sourceTree = "<group>"; };
+		F80BFAA128463D8A000660EB /* AssociateSansExtralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansExtralight.otf; sourceTree = "<group>"; };
+		F80BFAA228463D8A000660EB /* AssociateSansLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansLight.otf; sourceTree = "<group>"; };
+		F80BFAA328463D8A000660EB /* AssociateSansBoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansBoldItalic.otf; sourceTree = "<group>"; };
+		F80BFAA428463D8A000660EB /* AssociateSansRegularItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansRegularItalic.otf; sourceTree = "<group>"; };
+		F80BFAA528463D8A000660EB /* AssociateSansLightItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AssociateSansLightItalic.otf; sourceTree = "<group>"; };
 		F8228F8A28453CAD00D7C2B1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F826D16C284519D200705E26 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		F82B4FBB2835B648003236A0 /* TermsPolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsPolicy.swift; sourceTree = "<group>"; };
@@ -103,6 +123,31 @@
 				ABA36F5B84526A704618C80F /* Pods-Bankpf.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F80BFA9A28463D76000660EB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				F80BFA9B28463D8A000660EB /* Associate-sans */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		F80BFA9B28463D8A000660EB /* Associate-sans */ = {
+			isa = PBXGroup;
+			children = (
+				F80BFA9C28463D8A000660EB /* AssociateSansBold.otf */,
+				F80BFA9D28463D8A000660EB /* AssociateSansMedium.otf */,
+				F80BFA9E28463D8A000660EB /* AssociateSansRegular.otf */,
+				F80BFA9F28463D8A000660EB /* AssociateSansMediumItalic.otf */,
+				F80BFAA028463D8A000660EB /* AssociateSansExtralightItalic.otf */,
+				F80BFAA128463D8A000660EB /* AssociateSansExtralight.otf */,
+				F80BFAA228463D8A000660EB /* AssociateSansLight.otf */,
+				F80BFAA328463D8A000660EB /* AssociateSansBoldItalic.otf */,
+				F80BFAA428463D8A000660EB /* AssociateSansRegularItalic.otf */,
+				F80BFAA528463D8A000660EB /* AssociateSansLightItalic.otf */,
+			);
+			path = "Associate-sans";
 			sourceTree = "<group>";
 		};
 		F83DB304283C32F000708F3D /* Cadastrar */ = {
@@ -171,6 +216,7 @@
 				F82D368C2833C53C009405C7 /* Buttons.swift */,
 				F843A85B28330E99000BD260 /* Colors.swift */,
 				F83DB30C283C5CEC00708F3D /* ErrorAccount.swift */,
+				F80BFA9A28463D76000660EB /* Fonts */,
 				F826D16C284519D200705E26 /* GoogleService-Info.plist */,
 				F83E88402833079F00163411 /* Info.plist */,
 				F83DB306283C375200708F3D /* TextField.swift */,
@@ -192,6 +238,7 @@
 		F8A4951628330885007F0CFE /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				F8F449A42845974A003AF1EE /* Home */,
 				F8A49518283308AB007F0CFE /* Pré-Login */,
 				F8A49517283308A0007F0CFE /* Splash */,
 			);
@@ -212,7 +259,6 @@
 				F8AEDE4F2837D15F006D5AF4 /* Agencias */,
 				F83DB304283C32F000708F3D /* Cadastrar */,
 				F83DB305283C331400708F3D /* Entrar */,
-				F8F449A42845974A003AF1EE /* Home */,
 				F8A49519283308BD007F0CFE /* PreLogin.swift */,
 				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
 				F8AEDE4D2837D10D006D5AF4 /* Transferencias */,
@@ -334,10 +380,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F80BFAAF28463D8A000660EB /* AssociateSansLightItalic.otf in Resources */,
+				F80BFAAE28463D8A000660EB /* AssociateSansRegularItalic.otf in Resources */,
+				F80BFAA828463D8A000660EB /* AssociateSansRegular.otf in Resources */,
+				F80BFAAB28463D8A000660EB /* AssociateSansExtralight.otf in Resources */,
+				F80BFAAD28463D8A000660EB /* AssociateSansBoldItalic.otf in Resources */,
 				F83E883F2833079F00163411 /* LaunchScreen.storyboard in Resources */,
 				F826D16D284519D200705E26 /* GoogleService-Info.plist in Resources */,
+				F80BFAA628463D8A000660EB /* AssociateSansBold.otf in Resources */,
+				F80BFAA928463D8A000660EB /* AssociateSansMediumItalic.otf in Resources */,
 				F83E883C2833079F00163411 /* Assets.xcassets in Resources */,
+				F80BFAA728463D8A000660EB /* AssociateSansMedium.otf in Resources */,
 				F83E883A2833079D00163411 /* Main.storyboard in Resources */,
+				F80BFAAC28463D8A000660EB /* AssociateSansLight.otf in Resources */,
+				F80BFAAA28463D8A000660EB /* AssociateSansExtralightItalic.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -564,7 +620,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.41;
+				CURRENT_PROJECT_VERSION = 4.6.42;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -579,7 +635,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.41;
+				MARKETING_VERSION = 4.6.42;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -597,7 +653,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.41;
+				CURRENT_PROJECT_VERSION = 4.6.42;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -612,7 +668,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.41;
+				MARKETING_VERSION = 4.6.42;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
