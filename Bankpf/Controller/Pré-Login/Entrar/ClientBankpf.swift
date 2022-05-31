@@ -6,8 +6,11 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ClientBankpf: UIViewController {
+    
+    private let progress = JGProgressHUD(style: .dark)
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -126,7 +129,7 @@ class ClientBankpf: UIViewController {
         button.layer.borderWidth = 1
         button.layer.borderColor = CGColor(red: 245/255, green: 245/255, blue: 245/255, alpha: 1.0)
         button.layer.cornerRadius = 10
-        button.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
+        button.addTarget(self, action: #selector(loginAccount), for: .touchUpInside)
         return button
     }()
     
@@ -172,6 +175,32 @@ class ClientBankpf: UIViewController {
         transition.type = CATransitionType.push
         transition.subtype = CATransitionSubtype.fromTop
         view.window!.layer.add(transition, forKey: kCATransition)
+    }
+    
+    @objc func loginAccount() {
+        progress.show(in: view)
+        self.progress.dismiss()
+        
+        guard let email = tfEmail.text else { return }
+        guard let password = tfSenha.text else { return }
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.6, execute: {
+            AuthService.shared.logUserIn(withEmail: email, password: password) { (result, error) in
+                if error != nil {
+                    self.present(ErrorAccount(), animated: true)
+                    return
+                }
+                let controller = Home()
+                let navVC = UINavigationController(rootViewController: controller)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: false, completion: nil)
+                let transition = CATransition()
+                transition.duration = 0.4
+                transition.type = CATransitionType.push
+                transition.subtype = CATransitionSubtype.fromRight
+                self.view.window!.layer.add(transition, forKey: kCATransition)
+            }
+        });
     }
     
     // MARK: Lógicas
