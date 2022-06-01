@@ -17,7 +17,6 @@ class TextField: UITextField {
         tf.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
         tf.leftViewMode = .always
         tf.rightView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: tf.frame.height))
-        tf.font = UIFont(name: "AssociateSans-Light", size: 17)
         tf.rightViewMode = .always
         return tf
     }

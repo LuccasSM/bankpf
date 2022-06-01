@@ -141,7 +141,7 @@ class CreateAccount: UIViewController {
         return lbl
     }()
 
-    private lazy var tfNome: UITextField = {
+    lazy var tfNome: UITextField = {
         let tf = TextField().tf()
         tf.attributedPlaceholder = NSAttributedString(string: "Nome completo", attributes: [NSAttributedString.Key.foregroundColor: UIColor.colorDefault])
         return tf

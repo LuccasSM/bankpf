@@ -190,7 +190,7 @@ class ClientBankpf: UIViewController {
                     self.present(ErrorAccount(), animated: true)
                     return
                 }
-                let controller = Home()
+                let controller = Home(nome: CreateAccount().tfNome.text!)
                 let navVC = UINavigationController(rootViewController: controller)
                 navVC.modalPresentationStyle = .fullScreen
                 self.present(navVC, animated: false, completion: nil)
