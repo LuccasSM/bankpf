@@ -6,9 +6,18 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class Home: UIViewController {
-    var nome: String?
+    var nome: String? {
+        didSet {
+            DispatchQueue.main.async {
+                self.label.text = "Olá, \(self.nome ?? "")"
+            }
+        }
+    }
+    var userDefault = UserDefaults.standard
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +35,8 @@ class Home: UIViewController {
             label.topAnchor.constraint(equalTo: self.button.bottomAnchor, constant: 20),
             label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
         ])
+        
+        fetchUser()
     }
         
     private lazy var button: UIButton = {
@@ -40,7 +51,7 @@ class Home: UIViewController {
     private lazy var label: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = "Olá, \(nome!)"
+        label.text = "Olá, "
         label.textColor = .colorDefault
         label.font = .systemFont(ofSize: 18)
         return label
@@ -60,14 +71,36 @@ class Home: UIViewController {
         present(alert, animated: true)
     }
     
-    // MARK: Eventos da Tela
-        
-    init(nome: String) {
-        super.init(nibName: nil, bundle: nil)
-        self.nome = nome
+    // MARK: Passando nome do user via Firebase
+    
+    func fetchUser() {
+        if let userName = getUser() {
+            self.nome = userName
+        } else {
+            Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
+                if let dictionary = snapshot.value as? [String: AnyObject] {
+                    if let userDictionary = dictionary.first(where: { $0.key == "name" }) {
+                        self.nome = userDictionary.value as? String
+                        self.saveUser()
+                    }
+                }
+            }, withCancel: nil)
+        }
     }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) não foi implementado")
+    
+    // MARK: Salvando nome do usuário via cache
+    
+    func saveUser() {
+        if let id = Auth.auth().currentUser?.uid {
+            userDefault.set(nome, forKey: id)
+        }
+    }
+    
+    func getUser() -> String? {
+        if let id = Auth.auth().currentUser?.uid {
+            if let user = userDefault.object(forKey: id) as? String {
+                return user
+            }
+        }; return nil
     }
 }
