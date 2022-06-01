@@ -12,7 +12,7 @@ class Buttons: UIButton {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.adjustsImageWhenHighlighted = false
-        button.titleLabel?.font = .systemFont(ofSize: 18)
+        button.titleLabel?.font = .systemFont(ofSize: 17)
         button.layer.cornerRadius = 10
         return button
     }
