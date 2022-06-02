@@ -22,28 +22,33 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .grayDefault
-            
-        self.view.addSubview(button)
+        
+        let barButtonRight = UIBarButtonItem(customView: buttonRight)
+        self.navigationItem.rightBarButtonItem = barButtonRight
+        buttonRight.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
+        
+        self.view.addSubview(buttonRight)
         self.view.addSubview(label)
             
         NSLayoutConstraint.activate([
-            button.widthAnchor.constraint(equalToConstant: 100),
-            button.heightAnchor.constraint(equalToConstant: 50),
-            button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            buttonRight.widthAnchor.constraint(equalToConstant: 70),
+            buttonRight.heightAnchor.constraint(equalToConstant: 40),
             
-            label.topAnchor.constraint(equalTo: self.button.bottomAnchor, constant: 20),
             label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            label.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
         ])
         
         fetchUser()
     }
         
-    private lazy var button: UIButton = {
+    private lazy var buttonRight: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Toque", for: .normal)
-        button.backgroundColor = .orange
+        button.setImage(UIImage(named: "sign-out"), for: .normal)
+        button.setTitle("Sair", for: .normal)
+        button.imageEdgeInsets = UIEdgeInsets(top: 11, left: 7, bottom: 11, right: 44.5)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 0)
+        button.adjustsImageWhenHighlighted = false
         button.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         return button
     }()
