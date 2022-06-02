@@ -37,6 +37,10 @@
 		F843A85C28330E99000BD260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843A85B28330E99000BD260 /* Colors.swift */; };
 		F85A94E82837D4E500DD3783 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E72837D4E500DD3783 /* Images.swift */; };
 		F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */; };
+		F86ED788284840740051E5F1 /* ViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED787284840740051E5F1 /* ViewMenu.swift */; };
+		F86ED78B284844E10051E5F1 /* OpcoesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */; };
+		F86ED78D284845040051E5F1 /* MenuOpcionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */; };
+		F86ED78F284845320051E5F1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78E284845320051E5F1 /* Protocols.swift */; };
 		F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A49519283308BD007F0CFE /* PreLogin.swift */; };
 		F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */; };
 		F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */; };
@@ -84,6 +88,10 @@
 		F843A85B28330E99000BD260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F85A94E72837D4E500DD3783 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F86ED787284840740051E5F1 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
+		F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesMenu.swift; sourceTree = "<group>"; };
+		F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcionalCell.swift; sourceTree = "<group>"; };
+		F86ED78E284845320051E5F1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F8A49519283308BD007F0CFE /* PreLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLogin.swift; sourceTree = "<group>"; };
 		F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesAccount.swift; sourceTree = "<group>"; };
 		F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreateAccount.swift; sourceTree = "<group>"; };
@@ -200,6 +208,25 @@
 			path = Bankpf;
 			sourceTree = "<group>";
 		};
+		F86ED7862848404C0051E5F1 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F86ED789284844B50051E5F1 /* Itens-Menu */,
+				F86ED787284840740051E5F1 /* ViewMenu.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		F86ED789284844B50051E5F1 /* Itens-Menu */ = {
+			isa = PBXGroup;
+			children = (
+				F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */,
+				F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */,
+				F86ED78E284845320051E5F1 /* Protocols.swift */,
+			);
+			path = "Itens-Menu";
+			sourceTree = "<group>";
+		};
 		F8A4951328330809007F0CFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -259,6 +286,7 @@
 				F8AEDE4F2837D15F006D5AF4 /* Agencias */,
 				F83DB304283C32F000708F3D /* Cadastrar */,
 				F83DB305283C331400708F3D /* Entrar */,
+				F86ED7862848404C0051E5F1 /* Menu */,
 				F8A49519283308BD007F0CFE /* PreLogin.swift */,
 				F8AEDE4E2837D124006D5AF4 /* Sobre nós */,
 				F8AEDE4D2837D10D006D5AF4 /* Transferencias */,
@@ -449,6 +477,7 @@
 				F82D368D2833C53C009405C7 /* Buttons.swift in Sources */,
 				F8B561B2284534460011FE4E /* AuthService.swift in Sources */,
 				F83E88372833079D00163411 /* Splash.swift in Sources */,
+				F86ED78D284845040051E5F1 /* MenuOpcionalCell.swift in Sources */,
 				F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */,
 				F83DB307283C375200708F3D /* TextField.swift in Sources */,
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
@@ -462,11 +491,14 @@
 				F83DB30B283C5CCD00708F3D /* SuccessSenha.swift in Sources */,
 				F8F6FDBE28333089001B4338 /* Agencias.swift in Sources */,
 				F8F6FDBA28333034001B4338 /* Transferencias.swift in Sources */,
+				F86ED78B284844E10051E5F1 /* OpcoesMenu.swift in Sources */,
 				F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */,
 				F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */,
 				F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */,
+				F86ED788284840740051E5F1 /* ViewMenu.swift in Sources */,
 				F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */,
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
+				F86ED78F284845320051E5F1 /* Protocols.swift in Sources */,
 				F83DB30D283C5CEC00708F3D /* ErrorAccount.swift in Sources */,
 				F8F449A62845976F003AF1EE /* Home.swift in Sources */,
 				F83E88352833079D00163411 /* SceneDelegate.swift in Sources */,
@@ -620,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.43;
+				CURRENT_PROJECT_VERSION = 4.6.44;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -635,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.43;
+				MARKETING_VERSION = 4.6.44;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -653,7 +685,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.43;
+				CURRENT_PROJECT_VERSION = 4.6.44;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -668,7 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.43;
+				MARKETING_VERSION = 4.6.44;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

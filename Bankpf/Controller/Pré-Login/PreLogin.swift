@@ -98,6 +98,7 @@ class PreLogin: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.adjustsImageWhenHighlighted = false
         button.setImage(UIImage(named: "menu"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(menu), for: .touchUpInside)
         return button
     }()
     
@@ -193,6 +194,14 @@ class PreLogin: UIViewController {
     }()
     
     // MARK: Navegacoes da tela
+    
+    @objc func menu() {
+        let vc = ViewMenu()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalTransitionStyle = .crossDissolve
+        navVC.modalPresentationStyle = .fullScreen
+        self.present(navVC, animated: true)
+    }
     
     @objc func createAccount() {
         let controller = CreateAccount()
