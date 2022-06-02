@@ -116,7 +116,7 @@ class SobreNos: UIViewController {
     private lazy var versionApp: UILabel = {
         let lbl = UILabel()
         lbl.translatesAutoresizingMaskIntoConstraints = false
-        lbl.text = "Versão do App: 4.6.44"
+        lbl.text = "Versão do App: 4.6.45"
         lbl.font = UIFont(name: "AssociateSans-Light", size: 12)
         return lbl
     }()

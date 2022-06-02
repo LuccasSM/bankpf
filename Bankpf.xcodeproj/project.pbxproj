@@ -652,7 +652,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.44;
+				CURRENT_PROJECT_VERSION = 4.6.45;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -667,7 +667,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.44;
+				MARKETING_VERSION = 4.6.45;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -685,7 +685,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4.6.44;
+				CURRENT_PROJECT_VERSION = 4.6.45;
 				DEVELOPMENT_TEAM = UUW7T38LGA;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Bankpf/Utils/Info.plist;
@@ -700,7 +700,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.6.44;
+				MARKETING_VERSION = 4.6.45;
 				PRODUCT_BUNDLE_IDENTIFIER = bankpf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
