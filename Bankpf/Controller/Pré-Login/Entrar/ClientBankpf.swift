@@ -166,15 +166,10 @@ class ClientBankpf: UIViewController {
     }
     
     @objc func senhaEsqueci() {
-        let controller = EsqueciSenha()
-        let navVC = UINavigationController(rootViewController: controller)
+        let vc = EsqueciSenha()
+        let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: false, completion: nil)
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromTop
-        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(navVC, animated: true)
     }
     
     @objc func loginAccount() {

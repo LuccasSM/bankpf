@@ -18,7 +18,7 @@ class ViewMenu: UIViewController {
         view.backgroundColor = .grayDefault
         title = "Menu"
         
-        // MARK: Cores do navigatorBar
+    // MARK: Cores do navigatorBar
                 
         let navigationBarAppearance = UINavigationBarAppearance()
         navigationBarAppearance.configureWithOpaqueBackground()
@@ -115,6 +115,33 @@ extension ViewMenu: UITableViewDelegate, UITableViewDataSource {
             let separator = UILabel(frame: CGRect(x: 15, y: cell.frame.size.height - 1, width: cell.frame.size.width - 30, height: 0.1667))
             separator.backgroundColor = .grayDefault
             cell.contentView.addSubview(separator)
+        }
+    }
+    
+    // MARK: Redirecionamento de cada item da UITableView
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuOption = OpcoesMenu(rawValue: indexPath.row)
+        switch menuOption {
+            case .cep:
+                let vc = Cep()
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: true)
+            case .some(.bankpfMaster):
+                print("-")
+            case .some(.bankpfDefault):
+                print("-")
+            case .some(.cartaoCredito):
+                print("-")
+            case .some(.solicitarLimite):
+                print("-")
+            case .some(.token):
+                print("-")
+            case .some(.gerenciamento):
+                print("-")
+            case .none:
+                print("-")
         }
     }
 }
