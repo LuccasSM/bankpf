@@ -46,8 +46,9 @@ class Home: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(named: "sign-out"), for: .normal)
         button.setTitle("Sair", for: .normal)
-        button.imageEdgeInsets = UIEdgeInsets(top: 11, left: 7, bottom: 11, right: 44.5)
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 9, bottom: 0, right: 0)
+        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 18)
+        button.imageEdgeInsets = UIEdgeInsets(top: 11, left: 9, bottom: 11, right: 41)
+        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
         button.adjustsImageWhenHighlighted = false
         button.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         return button
