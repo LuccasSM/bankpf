@@ -80,11 +80,13 @@ class Home: UIViewController {
     // MARK: Passando nome do user via Firebase
     
     func fetchUser() {
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        
         if let userName = getUser() {
             self.nome = userName
         } else {
             Database.database().reference().child("users").observe(.childAdded, with: { (snapshot) in
-                if let dictionary = snapshot.value as? [String: AnyObject] {
+                if let dictionary = snapshot.value as? [String: AnyObject], snapshot.key == id {
                     if let userDictionary = dictionary.first(where: { $0.key == "name" }) {
                         self.nome = userDictionary.value as? String
                         self.saveUser()
