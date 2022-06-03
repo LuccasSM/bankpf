@@ -36,15 +36,17 @@ class Cep: UIViewController {
                 
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
-        self.view.addSubview(buttonLeft)
+        
+        self.view.addSubview(scrollView)
+        self.scrollView.addSubview(scrollViewContainer)
         self.view.addSubview(titleLabel)
-        self.view.addSubview(tF)
-        self.view.addSubview(logradouro)
-        self.view.addSubview(bairro)
-        self.view.addSubview(localidade)
-        self.view.addSubview(ddd)
-        self.view.addSubview(statusFinal)
-        self.view.addSubview(button)
+        self.scrollViewContainer.addArrangedSubview(tF)
+        self.scrollViewContainer.addArrangedSubview(logradouro)
+        self.scrollViewContainer.addArrangedSubview(bairro)
+        self.scrollViewContainer.addArrangedSubview(localidade)
+        self.scrollViewContainer.addArrangedSubview(ddd)
+        self.scrollViewContainer.addArrangedSubview(statusFinal)
+        self.scrollViewContainer.addArrangedSubview(button)
         
     // MARK: Ajustes de Layout de Elementos
         
@@ -52,37 +54,68 @@ class Cep: UIViewController {
             buttonLeft.widthAnchor.constraint(equalToConstant: 17),
             buttonLeft.heightAnchor.constraint(equalToConstant: 17),
         
+            titleLabel.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
+            titleLabel.heightAnchor.constraint(equalToConstant: 30),
+            titleLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50),
             titleLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
-            titleLabel.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.35),
+            titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             
-            tF.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60),
+            scrollView.topAnchor.constraint(equalTo: self.titleLabel.safeAreaLayoutGuide.bottomAnchor, constant: 30),
+            scrollView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+            scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor),
+            scrollView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -30),
+            
+            scrollViewContainer.widthAnchor.constraint(equalTo: self.scrollView.widthAnchor, constant: -2 * 30),
+            scrollViewContainer.topAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.topAnchor),
+            scrollViewContainer.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor),
+            scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
+            
             tF.heightAnchor.constraint(equalToConstant: 60),
-            tF.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            tF.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor),
             
-            logradouro.topAnchor.constraint(equalTo: self.tF.bottomAnchor, constant: 50),
-            logradouro.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            logradouro.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            logradouro.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             
-            bairro.topAnchor.constraint(equalTo: self.logradouro.bottomAnchor, constant: 30),
-            bairro.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            bairro.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            bairro.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             
-            localidade.topAnchor.constraint(equalTo: self.bairro.bottomAnchor, constant: 30),
-            localidade.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            localidade.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            localidade.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             
-            ddd.topAnchor.constraint(equalTo: self.localidade.bottomAnchor, constant: 30),
-            ddd.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            ddd.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            ddd.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             
-            statusFinal.topAnchor.constraint(equalTo: self.ddd.bottomAnchor, constant: 30),
-            statusFinal.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10),
+            statusFinal.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            statusFinal.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             
-            button.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 60),
             button.heightAnchor.constraint(equalToConstant: 60),
-            button.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            button.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor, constant: -25),
         ])
     }
     
     // MARK: Views da tela
+    
+    private lazy var scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        return scrollView
+    }()
+    
+    private lazy var scrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fill
+        view.spacing = 30
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private lazy var subScrollViewContainer: UIStackView = {
+        let view = UIStackView()
+        view.axis = .vertical
+        view.distribution = .fill
+        view.spacing = 30
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
     
     private lazy var buttonLeft: UIButton = {
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
@@ -183,7 +216,7 @@ class Cep: UIViewController {
         self.view.endEditing(true)
     }
     
-    // MARK: Funcao no botao de Ir
+    // MARK: Funcao no botao de Pesquisar
     
     @objc func pesquisarApi() {
         APIViaCep.pesquisarCEP(tF.text!) { res in

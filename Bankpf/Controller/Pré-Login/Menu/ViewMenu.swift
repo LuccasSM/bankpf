@@ -112,8 +112,8 @@ extension ViewMenu: UITableViewDelegate, UITableViewDataSource {
         if indexPath.row == 0 || indexPath.row == tableView.numberOfRows(inSection: indexPath.section) {
             cell.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: tableView.bounds.width)
     
-            let separator = UILabel(frame: CGRect(x: 15, y: cell.frame.size.height - 1, width: cell.frame.size.width - 30, height: 0.1667))
-            separator.backgroundColor = .grayDefault
+            let separator = UILabel(frame: CGRect(x: 15, y: cell.frame.size.height - 1, width: cell.frame.size.width - 30, height: 0.25))
+            separator.backgroundColor = .separatorTableView
             cell.contentView.addSubview(separator)
         }
     }
