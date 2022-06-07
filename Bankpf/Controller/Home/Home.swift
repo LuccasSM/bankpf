@@ -31,6 +31,20 @@ class Home: UIViewController {
         let logo = UIImage(named: "logo")
         let image = UIImageView(image: logo)
         
+        let barAppearance = UINavigationBar.appearance()
+        
+    // MARK: Removendo linha separadora do UINavigationBar
+            
+         if #available(iOS 13, *) {
+             let appearance = UINavigationBarAppearance()
+             appearance.configureWithTransparentBackground()
+             barAppearance.standardAppearance = appearance
+             barAppearance.scrollEdgeAppearance = appearance
+         } else {
+             barAppearance.setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.defaultPrompt)
+             barAppearance.shadowImage = UIImage()
+         }
+        
         let barButtonRight = UIBarButtonItem(customView: buttonRight)
         self.navigationItem.rightBarButtonItem = barButtonRight
         buttonRight.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
