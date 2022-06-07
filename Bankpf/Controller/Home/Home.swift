@@ -30,6 +30,9 @@ class Home: UIViewController {
         
         let logo = UIImage(named: "logo")
         let image = UIImageView(image: logo)
+        image.widthAnchor.constraint(equalToConstant: 135).isActive = true
+        image.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        self.navigationItem.titleView = image
         
     // MARK: Removendo linha separadora do UINavigationBar
             
@@ -39,34 +42,31 @@ class Home: UIViewController {
         self.navigationItem.standardAppearance = appearance
         self.navigationItem.scrollEdgeAppearance = appearance
         self.navigationItem.compactAppearance = appearance
+     
+    // MARK: Botoes do navigatorBar
+        
+        let barButtonLeft = UIBarButtonItem(customView: buttonLeft)
+        self.navigationItem.leftBarButtonItem = barButtonLeft
+        buttonLeft.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
         
         let barButtonRight = UIBarButtonItem(customView: buttonRight)
         self.navigationItem.rightBarButtonItem = barButtonRight
         buttonRight.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         
-        let barButtonLeft = UIBarButtonItem(customView: image)
-        self.navigationItem.leftBarButtonItem = barButtonLeft
-        
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(scrollViewContainer)
         self.view.addSubview(buttonRight)
-        
         self.view.addSubview(viewUser)
-        
         self.scrollViewContainer.addArrangedSubview(viewUserTwo)
         self.scrollViewContainer.addArrangedSubview(viewUserThree)
         self.scrollViewContainer.addArrangedSubview(viewUserFour)
         self.scrollViewContainer.addArrangedSubview(viewUserFive)
         self.scrollViewContainer.addArrangedSubview(viewUserSix)
-        
-        self.viewUser.addSubview(labelName)
+        self.viewUserTwo.addSubview(labelName)
             
         NSLayoutConstraint.activate([
-            image.widthAnchor.constraint(equalToConstant: 135),
-            image.heightAnchor.constraint(equalToConstant: 150),
-            
-            buttonRight.widthAnchor.constraint(equalToConstant: 70),
-            buttonRight.heightAnchor.constraint(equalToConstant: 40),
+            buttonLeft.widthAnchor.constraint(equalToConstant: 17),
+            buttonLeft.heightAnchor.constraint(equalToConstant: 17),
             
             viewUser.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             viewUser.heightAnchor.constraint(equalToConstant: 0.001),
@@ -123,15 +123,19 @@ class Home: UIViewController {
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
+    
+    private lazy var buttonLeft: UIButton = {
+        let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
+        button.adjustsImageWhenHighlighted = false
+        button.setImage(UIImage(named: "close-white"), for: UIControl.State.normal)
+        return button
+    }()
         
     private lazy var buttonRight: UIButton = {
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setImage(UIImage(named: "sign-out"), for: .normal)
         button.setTitle("Sair", for: .normal)
-        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 18)
-        button.imageEdgeInsets = UIEdgeInsets(top: 11, left: 9, bottom: 11, right: 41)
-        button.titleEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+        button.titleLabel?.font = UIFont(name: "AssociateSans-Light", size: 17)
         button.adjustsImageWhenHighlighted = false
         button.addTarget(self, action: #selector(showAlert), for: .touchUpInside)
         return button
@@ -186,6 +190,19 @@ class Home: UIViewController {
         label.textColor = .grayDefault
         return label
     }()
+    
+    // MARK: Navegacoes da tela
+
+    @objc func returnButton() {
+        let navVC = PreLogin()
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: false, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromLeft
+        view.window!.layer.add(transition, forKey: kCATransition)
+    }
         
     @objc func showAlert() {
         let alert = UIAlertController(title: "Deseja sair da sua conta?", message: "", preferredStyle: .alert)
