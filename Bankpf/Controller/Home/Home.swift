@@ -31,19 +31,14 @@ class Home: UIViewController {
         let logo = UIImage(named: "logo")
         let image = UIImageView(image: logo)
         
-        let barAppearance = UINavigationBar.appearance()
-        
     // MARK: Removendo linha separadora do UINavigationBar
             
-         if #available(iOS 13, *) {
-             let appearance = UINavigationBarAppearance()
-             appearance.configureWithTransparentBackground()
-             barAppearance.standardAppearance = appearance
-             barAppearance.scrollEdgeAppearance = appearance
-         } else {
-             barAppearance.setBackgroundImage(UIImage(), for: UIBarPosition.any, barMetrics: UIBarMetrics.defaultPrompt)
-             barAppearance.shadowImage = UIImage()
-         }
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundColor = .colorDefault
+        self.navigationItem.standardAppearance = appearance
+        self.navigationItem.scrollEdgeAppearance = appearance
+        self.navigationItem.compactAppearance = appearance
         
         let barButtonRight = UIBarButtonItem(customView: buttonRight)
         self.navigationItem.rightBarButtonItem = barButtonRight
@@ -189,7 +184,6 @@ class Home: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Olá, "
         label.textColor = .grayDefault
-        label.font = .systemFont(ofSize: 16)
         return label
     }()
         
