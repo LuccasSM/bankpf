@@ -21,7 +21,12 @@ class Home: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .grayDefault
+        
+    // MARK: Inserindo cores de fundo por baixo do Scroll
+        
+        let colorView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        colorView.addColors(colors: [.colorDefault, .grayDefault])
+        view.addSubview(colorView)
         
         let logo = UIImage(named: "logo")
         let image = UIImageView(image: logo)
@@ -39,11 +44,11 @@ class Home: UIViewController {
         
         self.view.addSubview(viewUser)
         
-        self.scrollViewContainer.addArrangedSubview(viewUser2)
-        self.scrollViewContainer.addArrangedSubview(viewUser3)
-        self.scrollViewContainer.addArrangedSubview(viewUser4)
-        self.scrollViewContainer.addArrangedSubview(viewUser5)
-        self.scrollViewContainer.addArrangedSubview(viewUser6)
+        self.scrollViewContainer.addArrangedSubview(viewUserTwo)
+        self.scrollViewContainer.addArrangedSubview(viewUserThree)
+        self.scrollViewContainer.addArrangedSubview(viewUserFour)
+        self.scrollViewContainer.addArrangedSubview(viewUserFive)
+        self.scrollViewContainer.addArrangedSubview(viewUserSix)
         
         self.viewUser.addSubview(labelName)
             
@@ -55,7 +60,7 @@ class Home: UIViewController {
             buttonRight.heightAnchor.constraint(equalToConstant: 40),
             
             viewUser.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
-            viewUser.heightAnchor.constraint(equalToConstant: 120),
+            viewUser.heightAnchor.constraint(equalToConstant: 0.001),
             viewUser.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             viewUser.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
             
@@ -70,17 +75,17 @@ class Home: UIViewController {
             scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             
             labelName.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
-            labelName.centerYAnchor.constraint(equalTo: self.viewUser.centerYAnchor),
+            labelName.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor),
             
-            viewUser2.heightAnchor.constraint(equalToConstant: 150),
+            viewUserTwo.heightAnchor.constraint(equalToConstant: 120),
             
-            viewUser3.heightAnchor.constraint(equalToConstant: 150),
+            viewUserThree.heightAnchor.constraint(equalToConstant: 150),
             
-            viewUser4.heightAnchor.constraint(equalToConstant: 150),
+            viewUserFour.heightAnchor.constraint(equalToConstant: 150),
             
-            viewUser5.heightAnchor.constraint(equalToConstant: 150),
+            viewUserFive.heightAnchor.constraint(equalToConstant: 150),
             
-            viewUser6.heightAnchor.constraint(equalToConstant: 150),
+            viewUserSix.heightAnchor.constraint(equalToConstant: 150),
         ])
         
         fetchUser()
@@ -130,35 +135,35 @@ class Home: UIViewController {
         return view
     }()
     
-    private lazy var viewUser2: UIView = {
+    private lazy var viewUserTwo: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .orange
         return view
     }()
     
-    private lazy var viewUser3: UIView = {
+    private lazy var viewUserThree: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .yellow
         return view
     }()
     
-    private lazy var viewUser4: UIView = {
+    private lazy var viewUserFour: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemGreen
         return view
     }()
     
-    private lazy var viewUser5: UIView = {
+    private lazy var viewUserFive: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .systemCyan
         return view
     }()
     
-    private lazy var viewUser6: UIView = {
+    private lazy var viewUserSix: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = .red
@@ -221,5 +226,30 @@ class Home: UIViewController {
                 return user
             }
         }; return nil
+    }
+}
+
+    // MARK: Extensao da Cor de fundo
+
+extension UIView {
+    func addColors(colors: [UIColor]) {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = self.bounds
+
+        var colorsArray: [CGColor] = []
+        var locationsArray: [NSNumber] = []
+        for (index, color) in colors.enumerated() {
+            colorsArray.append(color.cgColor)
+            colorsArray.append(color.cgColor)
+            locationsArray.append(NSNumber(value: (1.0 / Double(colors.count)) * Double(index)))
+            locationsArray.append(NSNumber(value: (1.0 / Double(colors.count)) * Double(index + 1)))
+        }
+
+        gradientLayer.colors = colorsArray
+        gradientLayer.locations = locationsArray
+
+        self.backgroundColor = .clear
+        self.layer.addSublayer(gradientLayer)
+        self.layer.masksToBounds = true
     }
 }
