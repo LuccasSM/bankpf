@@ -47,7 +47,7 @@ class Home: UIViewController {
         
         let barButtonLeft = UIBarButtonItem(customView: buttonLeft)
         self.navigationItem.leftBarButtonItem = barButtonLeft
-        buttonLeft.addTarget(self, action: #selector(returnButton), for: .touchUpInside)
+        buttonLeft.addTarget(self, action: #selector(menu), for: .touchUpInside)
         
         let barButtonRight = UIBarButtonItem(customView: buttonRight)
         self.navigationItem.rightBarButtonItem = barButtonRight
@@ -65,8 +65,8 @@ class Home: UIViewController {
         self.viewUserTwo.addSubview(labelName)
             
         NSLayoutConstraint.activate([
-            buttonLeft.widthAnchor.constraint(equalToConstant: 17),
-            buttonLeft.heightAnchor.constraint(equalToConstant: 17),
+            buttonLeft.widthAnchor.constraint(equalToConstant: 20),
+            buttonLeft.heightAnchor.constraint(equalToConstant: 20),
             
             viewUser.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width),
             viewUser.heightAnchor.constraint(equalToConstant: 0.001),
@@ -127,7 +127,7 @@ class Home: UIViewController {
     private lazy var buttonLeft: UIButton = {
         let button: UIButton = UIButton(type: UIButton.ButtonType.custom)
         button.adjustsImageWhenHighlighted = false
-        button.setImage(UIImage(named: "close-white"), for: UIControl.State.normal)
+        button.setImage(UIImage(named: "menu"), for: UIControl.State.normal)
         return button
     }()
         
@@ -192,16 +192,13 @@ class Home: UIViewController {
     }()
     
     // MARK: Navegacoes da tela
-
-    @objc func returnButton() {
-        let navVC = PreLogin()
+    
+    @objc func menu() {
+        let vc = ViewMenu()
+        let navVC = UINavigationController(rootViewController: vc)
+        navVC.modalTransitionStyle = .crossDissolve
         navVC.modalPresentationStyle = .fullScreen
-        present(navVC, animated: false, completion: nil)
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromLeft
-        view.window!.layer.add(transition, forKey: kCATransition)
+        self.present(navVC, animated: true)
     }
         
     @objc func showAlert() {
