@@ -57,7 +57,6 @@ class PorqueDados: UIViewController {
         text.translatesAutoresizingMaskIntoConstraints = false
         text.text = "Porque devo fornecer \nmeus dados?"
         text.font = UIFont.boldSystemFont(ofSize: 22)
-        text.textColor = .black
         text.textAlignment = .center
         text.numberOfLines = 0
         return text

@@ -55,9 +55,8 @@ class DetalhesConta: UIViewController {
     private lazy var titleView: UILabel = {
         let text = UILabel()
         text.translatesAutoresizingMaskIntoConstraints = false
-        text.text = "Porque devo fornecer \nmeus dados?"
+        text.text = "Detalhes da minha conta"
         text.font = UIFont.boldSystemFont(ofSize: 22)
-        text.textColor = .black
         text.textAlignment = .center
         text.numberOfLines = 0
         return text

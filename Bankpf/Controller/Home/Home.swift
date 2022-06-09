@@ -258,7 +258,8 @@ class Home: UIViewController {
     }
     
     @objc func notificationsPage() {
-        let navVC = Notification()
+        let vc = Notification()
+        let navVC = UINavigationController(rootViewController: vc)
         navVC.modalPresentationStyle = .fullScreen
         present(navVC, animated: false, completion: nil)
         let transition = CATransition()
