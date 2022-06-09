@@ -63,6 +63,8 @@ class Home: UIViewController {
         self.scrollViewContainer.addArrangedSubview(viewUserFive)
         self.scrollViewContainer.addArrangedSubview(viewUserSix)
         self.viewUserTwo.addSubview(labelName)
+        self.viewUserTwo.addSubview(esqueciSenha)
+        self.viewUserTwo.addSubview(notifications)
             
         NSLayoutConstraint.activate([
             buttonLeft.widthAnchor.constraint(equalToConstant: 20),
@@ -84,7 +86,15 @@ class Home: UIViewController {
             scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             
             labelName.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
-            labelName.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor),
+            labelName.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor, constant: -10),
+            
+            esqueciSenha.topAnchor.constraint(equalTo: self.labelName.bottomAnchor, constant: 15),
+            esqueciSenha.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
+            
+            notifications.widthAnchor.constraint(equalToConstant: 20),
+            notifications.heightAnchor.constraint(equalToConstant: 20),
+            notifications.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
+            notifications.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor, constant: -10),
             
             viewUserTwo.heightAnchor.constraint(equalToConstant: 120),
             
@@ -151,7 +161,7 @@ class Home: UIViewController {
     private lazy var viewUserTwo: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .orange
+        view.backgroundColor = .colorDefault
         return view
     }()
     
@@ -188,7 +198,35 @@ class Home: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Olá, "
         label.textColor = .grayDefault
+        label.font = .systemFont(ofSize: 18)
         return label
+    }()
+    
+    private lazy var esqueciSenha: UILabel = {
+        let lbl = UILabel()
+        let tapAction = UITapGestureRecognizer(target: self, action: #selector(detalhes))
+        
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        let underlineAttribute = [NSAttributedString.Key.underlineStyle: NSUnderlineStyle.thick.rawValue]
+        let attributes: [NSAttributedString.Key : Any] = [
+            NSAttributedString.Key.underlineStyle: 1,
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 12, weight: .medium),
+            NSAttributedString.Key.foregroundColor: UIColor.colorDefault
+        ]
+        let underlineAttributedString = NSAttributedString(string: "Detalhes da minha conta", attributes: attributes)
+        lbl.attributedText = underlineAttributedString
+        lbl.isUserInteractionEnabled = true
+        lbl.textColor = .grayDefault
+        lbl.addGestureRecognizer(tapAction)
+        return lbl
+    }()
+    
+    private lazy var notifications: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setImage(UIImage(named: "notifications"), for: .normal)
+        button.addTarget(self, action: #selector(notificationsPage), for: .touchUpInside)
+        return button
     }()
     
     // MARK: Navegacoes da tela
@@ -213,6 +251,21 @@ class Home: UIViewController {
         }))
         
         present(alert, animated: true)
+    }
+    
+    @objc func detalhes() {
+        self.present(DetalhesConta(), animated: true)
+    }
+    
+    @objc func notificationsPage() {
+        let navVC = Notification()
+        navVC.modalPresentationStyle = .fullScreen
+        present(navVC, animated: false, completion: nil)
+        let transition = CATransition()
+        transition.duration = 0.4
+        transition.type = CATransitionType.push
+        transition.subtype = CATransitionSubtype.fromRight
+        view.window!.layer.add(transition, forKey: kCATransition)
     }
     
     // MARK: Passando nome do user via Firebase

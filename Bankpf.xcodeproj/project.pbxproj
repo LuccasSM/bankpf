@@ -45,6 +45,8 @@
 		F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */; };
 		F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */; };
 		F8B561B2284534460011FE4E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B561B1284534460011FE4E /* AuthService.swift */; };
+		F8D1E45728518D80001C7999 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1E45628518D80001C7999 /* Notification.swift */; };
+		F8D1E45928518DF9001C7999 /* DetalhesConta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1E45828518DF9001C7999 /* DetalhesConta.swift */; };
 		F8D6BA7428496967004D9E6D /* Cep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7328496967004D9E6D /* Cep.swift */; };
 		F8D6BA7728497440004D9E6D /* ApiViaCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7628497440004D9E6D /* ApiViaCep.swift */; };
 		F8D6BA7928497460004D9E6D /* ItensCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7828497460004D9E6D /* ItensCep.swift */; };
@@ -99,6 +101,8 @@
 		F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesAccount.swift; sourceTree = "<group>"; };
 		F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreateAccount.swift; sourceTree = "<group>"; };
 		F8B561B1284534460011FE4E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		F8D1E45628518D80001C7999 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		F8D1E45828518DF9001C7999 /* DetalhesConta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesConta.swift; sourceTree = "<group>"; };
 		F8D6BA7328496967004D9E6D /* Cep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cep.swift; sourceTree = "<group>"; };
 		F8D6BA7628497440004D9E6D /* ApiViaCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViaCep.swift; sourceTree = "<group>"; };
 		F8D6BA7828497460004D9E6D /* ItensCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItensCep.swift; sourceTree = "<group>"; };
@@ -360,7 +364,9 @@
 		F8F449A42845974A003AF1EE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				F8D1E45828518DF9001C7999 /* DetalhesConta.swift */,
 				F8F449A52845976F003AF1EE /* Home.swift */,
+				F8D1E45628518D80001C7999 /* Notification.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -499,6 +505,7 @@
 				F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */,
 				F8D6BA7728497440004D9E6D /* ApiViaCep.swift in Sources */,
 				F83DB307283C375200708F3D /* TextField.swift in Sources */,
+				F8D1E45728518D80001C7999 /* Notification.swift in Sources */,
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
 				F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */,
 				F85A94E82837D4E500DD3783 /* Images.swift in Sources */,
@@ -515,6 +522,7 @@
 				F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */,
 				F83DB309283C54DD00708F3D /* EsqueciSenha.swift in Sources */,
 				F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */,
+				F8D1E45928518DF9001C7999 /* DetalhesConta.swift in Sources */,
 				F86ED788284840740051E5F1 /* ViewMenu.swift in Sources */,
 				F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */,
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
