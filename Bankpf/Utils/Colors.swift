@@ -17,4 +17,6 @@ extension UIColor {
     static let grayTransferencias = UIColor.rgb(red: 233, green: 233, blue: 233)
     static let redDefault = UIColor.rgb(red: 244, green: 65, blue: 52)
     static let separatorTableView = UIColor.rgb(red: 100, green: 100, blue: 100)
+    static let currentPageIndicatorTintColor = UIColor.rgb(red: 55, green: 73, blue: 255)
+    static let pageIndicatorTintColor = UIColor.rgb(red: 204, green: 204, blue: 204)
 }

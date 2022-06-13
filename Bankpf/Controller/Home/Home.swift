@@ -22,6 +22,9 @@ class Home: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrollViewCarousel.delegate = self
+        pageControl.addTarget(self, action: #selector(pageControlDidChage), for: .valueChanged)
+        
     // MARK: Inserindo cores de fundo por baixo do Scroll
         
         let colorView = UIImageView(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
@@ -65,6 +68,9 @@ class Home: UIViewController {
         self.viewUserTwo.addSubview(labelName)
         self.viewUserTwo.addSubview(esqueciSenha)
         self.viewUserTwo.addSubview(notifications)
+        self.viewUserThree.addSubview(titleCartoes)
+        self.viewUserThree.addSubview(scrollViewCarousel)
+        self.viewUserThree.addSubview(pageControl)
             
         NSLayoutConstraint.activate([
             buttonLeft.widthAnchor.constraint(equalToConstant: 20),
@@ -85,6 +91,8 @@ class Home: UIViewController {
             scrollViewContainer.bottomAnchor.constraint(equalTo: self.scrollView.contentLayoutGuide.bottomAnchor),
             scrollViewContainer.centerXAnchor.constraint(equalTo: self.scrollView.centerXAnchor),
             
+            viewUserTwo.heightAnchor.constraint(equalToConstant: 120),
+            
             labelName.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             labelName.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor, constant: -10),
             
@@ -96,18 +104,32 @@ class Home: UIViewController {
             notifications.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -15),
             notifications.centerYAnchor.constraint(equalTo: self.viewUserTwo.centerYAnchor, constant: -10),
             
-            viewUserTwo.heightAnchor.constraint(equalToConstant: 120),
+            viewUserThree.heightAnchor.constraint(equalToConstant: 350),
             
-            viewUserThree.heightAnchor.constraint(equalToConstant: 150),
+            titleCartoes.topAnchor.constraint(equalTo: self.viewUserThree.topAnchor, constant: 30),
+            titleCartoes.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
             
             viewUserFour.heightAnchor.constraint(equalToConstant: 150),
-            
+
             viewUserFive.heightAnchor.constraint(equalToConstant: 150),
-            
+
             viewUserSix.heightAnchor.constraint(equalToConstant: 150),
         ])
         
         fetchUser()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        pageControl.frame = CGRect(x: 0, y: self.viewUserThree.frame.size.height - 65, width: self.view.frame.size.width, height: 70)
+        pageControl.currentPageIndicatorTintColor = .currentPageIndicatorTintColor
+        pageControl.pageIndicatorTintColor = .pageIndicatorTintColor
+        
+        scrollViewCarousel.frame = CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - 100)
+
+        if scrollViewCarousel.subviews.count == 2 {
+            configureScrollView()
+        }
     }
     
     // MARK: Views da tela
@@ -168,7 +190,7 @@ class Home: UIViewController {
     private lazy var viewUserThree: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = .yellow
+        view.backgroundColor = .grayDefault
         return view
     }()
     
@@ -229,7 +251,50 @@ class Home: UIViewController {
         return button
     }()
     
+    private lazy var titleCartoes: UILabel = {
+        let lbl = UILabel()
+        lbl.translatesAutoresizingMaskIntoConstraints = false
+        lbl.text = "Meus cartões"
+        lbl.textColor = .colorDefault
+        lbl.font = .systemFont(ofSize: 18, weight: .bold)
+        return lbl
+    }()
+    
+    // MARK: Inserindo Scroll vertical dos cartoes
+    
+    private lazy var pageControl: UIPageControl = {
+        let pageControl = UIPageControl()
+        pageControl.numberOfPages = 2
+        return pageControl
+    }()
+    
+    private let scrollViewCarousel = UIScrollView()
+    
+    private func configureScrollView() {
+        scrollViewCarousel.contentSize = CGSize(width: self.view.frame.width * 2, height: scrollViewCarousel.frame.size.height)
+        scrollViewCarousel.isPagingEnabled = true
+        scrollViewCarousel.showsHorizontalScrollIndicator = false
+        
+        let imagesCards: [UIImage?] = [
+            UIImage(named: "card-visa-bankpfdefault"),
+            UIImage(named: "card-visa-bankpfmaster"),
+        ]
+        
+        for x in 0..<2 {
+            let page = UIImageView(frame: CGRect(x: CGFloat(x) * self.view.frame.size.width + 70, y: UIScreen.main.bounds.height / 8, width: self.view.frame.size.width - 140, height: 142))
+            
+            page.image = imagesCards[x]
+            page.contentMode = .scaleAspectFill
+            scrollViewCarousel.addSubview(page)
+        }
+    }
+    
     // MARK: Navegacoes da tela
+    
+    @objc func pageControlDidChage(_ sender: UIPageControl) {
+        let current = sender.currentPage
+        scrollViewCarousel.setContentOffset(CGPoint(x: CGFloat(current) * self.view.frame.size.width, y: 0), animated: true)
+    }
     
     @objc func menu() {
         let vc = ViewMenu()
@@ -327,5 +392,11 @@ extension UIView {
         self.backgroundColor = .clear
         self.layer.addSublayer(gradientLayer)
         self.layer.masksToBounds = true
+    }
+}
+
+extension Home: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        pageControl.currentPage = Int(floorf(Float(scrollView.contentOffset.x) / Float(scrollView.frame.size.width)))
     }
 }
