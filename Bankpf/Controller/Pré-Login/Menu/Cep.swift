@@ -202,14 +202,7 @@ class Cep: UIViewController {
     // MARK: Navegacoes da tela
     
     @objc func returnButton() {
-        let vc = PreLogin()
-        vc.modalPresentationStyle = .fullScreen
-        present(vc, animated: false, completion: nil)
-        let transition = CATransition()
-        transition.duration = 0.4
-        transition.type = CATransitionType.push
-        transition.subtype = CATransitionSubtype.fromBottom
-        view.window!.layer.add(transition, forKey: kCATransition)
+        self.presentingViewController?.presentingViewController?.dismiss(animated: true, completion: nil)
     }
     
     @objc func hideKeyboard() {
