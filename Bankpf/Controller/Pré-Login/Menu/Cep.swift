@@ -36,7 +36,6 @@ class Cep: UIViewController {
                 
         self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(hideKeyboard)))
         
-        
         self.view.addSubview(scrollView)
         self.scrollView.addSubview(scrollViewContainer)
         self.view.addSubview(titleLabel)

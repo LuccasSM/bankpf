@@ -52,4 +52,3 @@ class MenuOpcionalCell: UITableViewCell {
         fatalError("init(coder:) não foi implementado")
     }
 }
-

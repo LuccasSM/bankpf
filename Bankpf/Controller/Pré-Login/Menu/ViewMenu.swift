@@ -123,23 +123,26 @@ extension ViewMenu: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let menuOption = OpcoesMenu(rawValue: indexPath.row)
         switch menuOption {
+            case .bankpfMaster:
+                let vc = BankpfMaster()
+                let navVC = UINavigationController(rootViewController: vc)
+                navVC.modalPresentationStyle = .fullScreen
+                self.present(navVC, animated: true)
+            case .bankpfDefault:
+                print("-")
+            case .cartaoCredito:
+                print("-")
+            case .solicitarLimite:
+                print("-")
+            case .token:
+                print("-")
+            case .gerenciamento:
+                print("-")
             case .cep:
                 let vc = Cep()
                 let navVC = UINavigationController(rootViewController: vc)
                 navVC.modalPresentationStyle = .fullScreen
                 self.present(navVC, animated: true)
-            case .some(.bankpfMaster):
-                print("-")
-            case .some(.bankpfDefault):
-                print("-")
-            case .some(.cartaoCredito):
-                print("-")
-            case .some(.solicitarLimite):
-                print("-")
-            case .some(.token):
-                print("-")
-            case .some(.gerenciamento):
-                print("-")
             case .none:
                 print("-")
         }

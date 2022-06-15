@@ -37,16 +37,18 @@
 		F843A85C28330E99000BD260 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = F843A85B28330E99000BD260 /* Colors.swift */; };
 		F85A94E82837D4E500DD3783 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E72837D4E500DD3783 /* Images.swift */; };
 		F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */; };
+		F86886D32859739C0056989F /* OpcoesBankpfMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86886D22859739C0056989F /* OpcoesBankpfMaster.swift */; };
 		F86ED788284840740051E5F1 /* ViewMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED787284840740051E5F1 /* ViewMenu.swift */; };
 		F86ED78B284844E10051E5F1 /* OpcoesMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */; };
 		F86ED78D284845040051E5F1 /* MenuOpcionalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */; };
-		F86ED78F284845320051E5F1 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F86ED78E284845320051E5F1 /* Protocols.swift */; };
 		F8A4951A283308BD007F0CFE /* PreLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8A49519283308BD007F0CFE /* PreLogin.swift */; };
 		F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */; };
 		F8AE1DAB284076C000774DDB /* SuccessCreateAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */; };
 		F8B561B2284534460011FE4E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8B561B1284534460011FE4E /* AuthService.swift */; };
 		F8D1E45728518D80001C7999 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1E45628518D80001C7999 /* Notification.swift */; };
 		F8D1E45928518DF9001C7999 /* DetalhesConta.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D1E45828518DF9001C7999 /* DetalhesConta.swift */; };
+		F8D26D94285960C0006DD7BF /* BankpfMaster.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D26D93285960C0006DD7BF /* BankpfMaster.swift */; };
+		F8D26D992859689C006DD7BF /* BankpfMasterOptioCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D26D982859689C006DD7BF /* BankpfMasterOptioCell.swift */; };
 		F8D6BA7428496967004D9E6D /* Cep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7328496967004D9E6D /* Cep.swift */; };
 		F8D6BA7728497440004D9E6D /* ApiViaCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7628497440004D9E6D /* ApiViaCep.swift */; };
 		F8D6BA7928497460004D9E6D /* ItensCep.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8D6BA7828497460004D9E6D /* ItensCep.swift */; };
@@ -93,16 +95,18 @@
 		F843A85B28330E99000BD260 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		F85A94E72837D4E500DD3783 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		F85A94E92837D52D00DD3783 /* CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		F86886D22859739C0056989F /* OpcoesBankpfMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesBankpfMaster.swift; sourceTree = "<group>"; };
 		F86ED787284840740051E5F1 /* ViewMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMenu.swift; sourceTree = "<group>"; };
 		F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpcoesMenu.swift; sourceTree = "<group>"; };
 		F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOpcionalCell.swift; sourceTree = "<group>"; };
-		F86ED78E284845320051E5F1 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		F8A49519283308BD007F0CFE /* PreLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreLogin.swift; sourceTree = "<group>"; };
 		F8AE1DA62840734A00774DDB /* ValidatesAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatesAccount.swift; sourceTree = "<group>"; };
 		F8AE1DAA284076C000774DDB /* SuccessCreateAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessCreateAccount.swift; sourceTree = "<group>"; };
 		F8B561B1284534460011FE4E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		F8D1E45628518D80001C7999 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		F8D1E45828518DF9001C7999 /* DetalhesConta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalhesConta.swift; sourceTree = "<group>"; };
+		F8D26D93285960C0006DD7BF /* BankpfMaster.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankpfMaster.swift; sourceTree = "<group>"; };
+		F8D26D982859689C006DD7BF /* BankpfMasterOptioCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankpfMasterOptioCell.swift; sourceTree = "<group>"; };
 		F8D6BA7328496967004D9E6D /* Cep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cep.swift; sourceTree = "<group>"; };
 		F8D6BA7628497440004D9E6D /* ApiViaCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiViaCep.swift; sourceTree = "<group>"; };
 		F8D6BA7828497460004D9E6D /* ItensCep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItensCep.swift; sourceTree = "<group>"; };
@@ -222,7 +226,9 @@
 		F86ED7862848404C0051E5F1 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
+				F8D26D93285960C0006DD7BF /* BankpfMaster.swift */,
 				F8D6BA7328496967004D9E6D /* Cep.swift */,
+				F8D26D9528596812006DD7BF /* Itens-BankpfMater */,
 				F86ED789284844B50051E5F1 /* Itens-Menu */,
 				F86ED787284840740051E5F1 /* ViewMenu.swift */,
 			);
@@ -234,7 +240,6 @@
 			children = (
 				F86ED78C284845040051E5F1 /* MenuOpcionalCell.swift */,
 				F86ED78A284844E10051E5F1 /* OpcoesMenu.swift */,
-				F86ED78E284845320051E5F1 /* Protocols.swift */,
 			);
 			path = "Itens-Menu";
 			sourceTree = "<group>";
@@ -350,6 +355,15 @@
 				F8B561B02845342A0011FE4E /* API */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		F8D26D9528596812006DD7BF /* Itens-BankpfMater */ = {
+			isa = PBXGroup;
+			children = (
+				F8D26D982859689C006DD7BF /* BankpfMasterOptioCell.swift */,
+				F86886D22859739C0056989F /* OpcoesBankpfMaster.swift */,
+			);
+			path = "Itens-BankpfMater";
 			sourceTree = "<group>";
 		};
 		F8D6BA752849740E004D9E6D /* ViewModel */ = {
@@ -505,9 +519,11 @@
 				F82B4FC02835C8DC003236A0 /* ClientBankpf.swift in Sources */,
 				F8D6BA7728497440004D9E6D /* ApiViaCep.swift in Sources */,
 				F83DB307283C375200708F3D /* TextField.swift in Sources */,
+				F8D26D94285960C0006DD7BF /* BankpfMaster.swift in Sources */,
 				F8D1E45728518D80001C7999 /* Notification.swift in Sources */,
 				F843A85C28330E99000BD260 /* Colors.swift in Sources */,
 				F8E62709283F170000DA1FEF /* TextFieldSenhas.swift in Sources */,
+				F8D26D992859689C006DD7BF /* BankpfMasterOptioCell.swift in Sources */,
 				F85A94E82837D4E500DD3783 /* Images.swift in Sources */,
 				F8AE1DA72840734A00774DDB /* ValidatesAccount.swift in Sources */,
 				F8DF12F5284042D400856212 /* PorqueDados.swift in Sources */,
@@ -524,9 +540,9 @@
 				F85A94EA2837D52D00DD3783 /* CollectionViewCell.swift in Sources */,
 				F8D1E45928518DF9001C7999 /* DetalhesConta.swift in Sources */,
 				F86ED788284840740051E5F1 /* ViewMenu.swift in Sources */,
+				F86886D32859739C0056989F /* OpcoesBankpfMaster.swift in Sources */,
 				F82B4FBE2835C8A8003236A0 /* CreateAccount.swift in Sources */,
 				F83E88332833079D00163411 /* AppDelegate.swift in Sources */,
-				F86ED78F284845320051E5F1 /* Protocols.swift in Sources */,
 				F83DB30D283C5CEC00708F3D /* ErrorAccount.swift in Sources */,
 				F8F449A62845976F003AF1EE /* Home.swift in Sources */,
 				F83E88352833079D00163411 /* SceneDelegate.swift in Sources */,
