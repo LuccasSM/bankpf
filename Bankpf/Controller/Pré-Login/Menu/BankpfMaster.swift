@@ -49,10 +49,10 @@ class BankpfMaster: UIViewController {
             cartao.widthAnchor.constraint(equalToConstant: UIScreen.main.bounds.width - 100),
             cartao.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             cartao.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50),
-            cartao.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.192),
+            cartao.heightAnchor.constraint(equalToConstant: 142),
             
             text.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 15),
-            text.topAnchor.constraint(equalTo: self.cartao.bottomAnchor, constant: 35),
+            text.topAnchor.constraint(equalTo: self.cartao.bottomAnchor, constant: 50),
         ])
     }
     
@@ -69,6 +69,7 @@ class BankpfMaster: UIViewController {
         let image = UIImageView()
         image.translatesAutoresizingMaskIntoConstraints = false
         image.image = UIImage(named: "card-visa-bankpfmaster-black")
+        image.contentMode = .scaleAspectFill
         return image
     }()
     
